@@ -1,0 +1,64 @@
+class Driver:
+    pay_per_delivery = 1500
+    def __init__(self, name, deliveries = 0, wallet = 0):
+        self.name = name
+        self.deliveries = deliveries
+        self.wallet = wallet
+        self.bonus = 0
+        self.fuel = 0
+        self.credited_bonus = 0
+        self.credited_fuel = 0
+
+    def calculate_bonus(self):
+        if self.deliveries >= 20:
+            return 5000
+        else:
+            return 0
+    def calculate_fuel(self):
+        if self.deliveries >= 30:
+            return 1000
+        else:
+            return 0
+
+    def calculate_earnings(self):
+        return self.deliveries * Driver.pay_per_delivery
+
+    def add_delivery(self):
+        self.deliveries += 1
+
+    def update_wallet(self):
+        self.bonus = self.calculate_bonus()
+        self.fuel = self.calculate_fuel()
+        new_bonus = self.bonus - self.credited_bonus
+        new_fuel = self.fuel - self.credited_fuel
+        self.wallet += new_bonus +  new_fuel
+        self.credited_bonus = self.bonus
+        self.credited_fuel = self.fuel
+
+    def complete_delivery(self):
+        self.add_delivery()
+        self.update_wallet()
+
+    def show_earnings(self):
+        earnings = self.calculate_earnings()
+
+        print(f"Driver : {self.name}")
+        print(f"Deliveries : {self.deliveries}")
+        print(f"Base Pay : {earnings :,}")
+        print(f"Bonus : {self.bonus:,}")
+        print(f"Fuel : {self.fuel:,}")
+        print(f"Wallet: {self.wallet:,}")
+        print("-" * 30)
+
+drivers_list = [
+    Driver("Tega", 19, 10000),
+    Driver("John", 29, 15000),
+    Driver("Mary", 15, 8000)
+]
+for driver in drivers_list:
+    for i in range(5):
+        driver.complete_delivery()
+    driver.show_earnings()
+
+        
+     
