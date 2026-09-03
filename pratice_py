@@ -1,7 +1,12 @@
 class Driver:
     pay_per_delivery = 1500
-    def __init__(self, name, deliveries = 0, wallet = 0):
+    next_id = 1
+    def __init__(self, name, phone, vehicle, deliveries = 0, wallet = 0):
+        self.driver_id = f"RE{Driver.next_id:03d}"
+        Driver.next_id += 1
         self.name = name
+        self.phone = phone
+        self.vehicle = vehicle
         self.deliveries = deliveries
         self.wallet = wallet
         self.bonus = 0
@@ -41,8 +46,10 @@ class Driver:
 
     def show_earnings(self):
         earnings = self.calculate_earnings()
-
+        print(f"Driver ID : {self.driver_id}")
         print(f"Driver : {self.name}")
+        print(f"Phone     : {self.phone}")
+        print(f"Vehicle   : {self.vehicle}")
         print(f"Deliveries : {self.deliveries}")
         print(f"Base Pay : {earnings :,}")
         print(f"Bonus : {self.bonus:,}")
@@ -70,16 +77,16 @@ class RouteEarner:
             for driver in self.drivers:
                 if driver.name == name:
                     return driver
-                return None
+            return None
 
-    def register_driver(self, name):
+    def register_driver(self, name, phone, vehicle):
         existing_driver = self.find_driver(name)
 
         if existing_driver is not None:
             print("Driver already registered.")
             return existing_driver
 
-        new_driver = Driver(name)
+        new_driver = Driver(name, phone, vehicle)
         self.drivers.append(new_driver)
         return new_driver
 
