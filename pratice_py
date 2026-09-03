@@ -50,15 +50,45 @@ class Driver:
         print(f"Wallet: {self.wallet:,}")
         print("-" * 30)
 
-drivers_list = [
-    Driver("Tega", 19, 10000),
-    Driver("John", 29, 15000),
-    Driver("Mary", 15, 8000)
-]
-for driver in drivers_list:
-    for i in range(5):
-        driver.complete_delivery()
-    driver.show_earnings()
+class RouteEarner:
 
-        
-     
+    def __init__(self):
+        self.drivers = []
+
+    def add_driver(self, driver):
+        self.drivers.append(driver)
+
+    def show_all_drivers(self):
+        for driver in self.drivers:
+            driver.show_earnings()
+
+    def complete_delivery_for_all(self):
+        for driver in self.drivers:
+            driver.complete_delivery()
+
+    def find_driver(self, name):
+            for driver in self.drivers:
+                if driver.name == name:
+                    return driver
+                return None
+
+    def register_driver(self, name):
+        existing_driver = self.find_driver(name)
+
+        if existing_driver is not None:
+            print("Driver already registered.")
+            return existing_driver
+
+        new_driver = Driver(name)
+        self.drivers.append(new_driver)
+        return new_driver
+
+
+    def complete_delivery_for_driver(self, name):
+        driver = self.find_driver(name)
+
+        if driver is None:
+            print("Driver not found.")
+        else:
+            driver.complete_delivery()
+            print(f"{driver.name} completed a delivery.")
