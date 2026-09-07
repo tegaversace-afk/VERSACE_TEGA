@@ -9,6 +9,7 @@ class Driver:
         self.vehicle = vehicle
         self.deliveries = deliveries
         self.wallet = wallet
+        self.available = available
         self.bonus = 0
         self.fuel = 0
         self.credited_bonus = 0
@@ -43,6 +44,13 @@ class Driver:
     def complete_delivery(self):
         self.add_delivery()
         self.update_wallet()
+        self.go_online()
+
+    def update_phone(self, new_phone):
+        self.phone = new_phone
+
+    def update_vehicle(self, new_vehicle):
+        self.vehicle = new_vehicle
 
     def show_earnings(self):
         earnings = self.calculate_earnings()
@@ -57,10 +65,38 @@ class Driver:
         print(f"Wallet: {self.wallet:,}")
         print("-" * 30)
 
+
+class Delivery:
+    next_id = 1
+
+    def __init__(self, pickup, dropoff, customer):
+        self.delivery_id = f"DEL{Delivery.next_id:03d}"
+        Delivery.next_id += 1
+
+        self.pickup = pickup
+        self.dropoff = dropoff
+        self.customer = customer
+        self.status = "Pending"
+        self.assigned_driver = None
+
+    def complete(self):
+        self.status = "Completed"
+
+    def show_details(self):
+        driver_name = self.assigned_driver.name if self.assigned_driver else "Unassigned"
+        print(f"Delivery ID: {self.delivery_id}")
+        print(f"Customer   : {self.customer}")
+        print(f"Pickup     : {self.pickup}")
+        print(f"Dropoff    : {self.dropoff}")
+        print(f"Status     : {self.status}")
+        print(f"Assigned To: {driver_name}")
+        print("-" * 30)
+
 class RouteEarner:
 
     def __init__(self):
         self.drivers = []
+        self.deliveries = []
 
     def add_driver(self, driver):
         self.drivers.append(driver)
@@ -79,6 +115,28 @@ class RouteEarner:
                     return driver
             return None
 
+    def find_driver_by_id(self, driver_id):
+        for driver in self.drivers:
+            if driver.driver_id == driver_id:
+                return driver
+        return None
+
+    def find_available_driver(self):
+        for driver in self.drivers:
+            if driver.available:
+                return driver
+        return None
+
+    def assign_delivery(self):
+        driver = self.find_available_driver()
+
+        if driver is None:
+            print("No available driver.")
+        else:
+            driver.complete_delivery()  
+            driver.go_offline()          
+            print(f"Delivery assigned to {driver.name} ")
+
     def register_driver(self, name, phone, vehicle):
         existing_driver = self.find_driver(name)
 
@@ -90,12 +148,40 @@ class RouteEarner:
         self.drivers.append(new_driver)
         return new_driver
 
-
-    def complete_delivery_for_driver(self, name):
-        driver = self.find_driver(name)
+    def assign_delivery(self, delivery):
+        driver = self.find_available_driver()
 
         if driver is None:
-            print("Driver not found.")
+            print(f"No available driver for Delivery {delivery.delivery_id}.")
         else:
+            delivery.assigned_driver = driver
+            delivery.complete()
+            
             driver.complete_delivery()
-            print(f"{driver.name} completed a delivery.")
+            driver.go_offline()
+            
+            self.deliveries.append(delivery)
+            print(f"Delivery {delivery.delivery_id} assigned to {driver.name} ({driver.driver_id}).")
+
+    
+
+
+    # def complete_delivery_for_driver(self, name):
+    #     driver = self.find_driver(name)
+
+    #     if driver is None:
+    #         print("Driver not found.")
+    #     else:
+    #         driver.complete_delivery()
+    #         print(f"{driver.name} completed a delivery.")
+
+
+    # def update_driver_profile(self, driver_id, new_phone, new_vehicle):
+    #     driver = self.find_driver_by_id(driver_id)
+
+    #     if driver is None:
+    #         print("Driver not found.")
+    #     else:
+    #         driver.update_phone(new_phone)
+    #         driver.update_vehicle(new_vehicle)
+    #         print("Driver profile updated successfully.")
