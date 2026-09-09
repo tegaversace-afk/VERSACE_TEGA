@@ -1,0 +1,441 @@
+# ==========================================
+# ROUTEEARNER
+# Driver + Request Management
+# ==========================================
+
+
+# ==========================================
+# DRIVER CLASS
+# ==========================================
+
+class Driver:
+
+    # Class variable for generating unique driver IDs
+    next_id = 1
+
+    # Pay per completed delivery/ride
+    pay_per_delivery = 1500
+
+    def __init__(self, name, phone, vehicle):
+
+        # Generate unique driver ID
+        self.driver_id = f"RE{Driver.next_id:03d}"
+        Driver.next_id += 1
+
+        # Driver profile
+        self.name = name
+        self.phone = phone
+        self.vehicle = vehicle
+
+        # Driver activity and financial information
+        self.deliveries = 0
+        self.earnings = 0
+        self.wallet_balance = 0
+        self.debt = 0
+
+        # Driver availability
+        self.available = False
+
+        # Bonus and fuel tracking
+        self.bonus = 0
+        self.fuel = 0
+        self.credited_bonus = 0
+        self.credited_fuel = 0
+
+
+    # ==========================================
+    # DRIVER PROFILE
+    # ==========================================
+
+    def show_profile(self):
+        print(f"Driver ID: {self.driver_id}")
+        print(f"Name: {self.name}")
+        print(f"Phone: {self.phone}")
+        print(f"Vehicle: {self.vehicle}")
+
+
+    def update_vehicle(self, new_vehicle):
+        self.vehicle = new_vehicle
+
+
+    def update_phone(self, new_phone):
+        self.phone = new_phone
+
+
+    # ==========================================
+    # DRIVER AVAILABILITY
+    # ==========================================
+
+    def go_online(self):
+        self.available = True
+
+
+    def go_offline(self):
+        self.available = False
+
+
+    # ==========================================
+    # DRIVER EARNINGS
+    # ==========================================
+
+    def calculate_earnings(self):
+        return self.deliveries * Driver.pay_per_delivery
+
+
+    def calculate_bonus(self):
+
+        if self.deliveries >= 20:
+            return 5000
+        else:
+            return 0
+
+
+    def calculate_fuel(self):
+
+        if self.deliveries >= 30:
+            return 1000
+        else:
+            return 0
+
+
+    def update_wallet(self):
+
+        self.bonus = self.calculate_bonus()
+        self.fuel = self.calculate_fuel()
+
+        new_bonus = self.bonus - self.credited_bonus
+        new_fuel = self.fuel - self.credited_fuel
+
+        self.wallet_balance += new_bonus + new_fuel
+
+        self.credited_bonus = self.bonus
+        self.credited_fuel = self.fuel
+
+
+    def add_delivery(self):
+
+        self.deliveries += 1
+
+        # Update bonus/fuel when delivery count changes
+        self.update_wallet()
+
+
+    def show_earnings(self):
+
+        self.bonus = self.calculate_bonus()
+        self.fuel = self.calculate_fuel()
+
+        earnings = (
+            self.calculate_earnings()
+            + self.bonus
+            + self.fuel
+        )
+
+        print(f"Driver: {self.name}")
+        print(f"Deliveries: {self.deliveries}")
+        print(f"Base Pay: ₦{self.calculate_earnings():,}")
+        print(f"Bonus: ₦{self.bonus:,}")
+        print(f"Fuel: ₦{self.fuel:,}")
+        print(f"Total Earnings: ₦{earnings:,}")
+        print(f"Wallet Balance: ₦{self.wallet_balance:,}")
+        print(f"Debt: ₦{self.debt:,}")
+
+
+    # ==========================================
+    # PAYMENT ELIGIBILITY
+    # ==========================================
+
+    def can_accept_cash(self):
+
+        return self.debt < 6000
+
+
+    def can_accept_card(self):
+
+        return True
+
+
+    # ==========================================
+    # DRIVER SUMMARY
+    # ==========================================
+
+    def show_summary(self):
+
+        print(f"Driver ID: {self.driver_id}")
+        print(f"Name: {self.name}")
+        print(f"Deliveries: {self.deliveries}")
+        print(f"Available: {self.available}")
+        print(f"Earnings: ₦{self.earnings:,}")
+        print(f"Wallet: ₦{self.wallet_balance:,}")
+        print(f"Debt: ₦{self.debt:,}")
+
+
+# ==========================================
+# REQUEST CLASS
+# ==========================================
+
+class Request:
+
+    def __init__(self, pickup, destination, fare, payment_method):
+
+        self.pickup = pickup
+        self.destination = destination
+        self.fare = fare
+        self.payment_method = payment_method
+
+        # Request starts as Pending
+        self.status = "Pending"
+
+        # No driver assigned initially
+        self.driver = None
+
+
+    # ==========================================
+    # SHOW REQUEST
+    # ==========================================
+
+    def show_request(self):
+
+        print(f"Pickup: {self.pickup}")
+        print(f"Destination: {self.destination}")
+        print(f"Fare: ₦{self.fare:,}")
+        print(f"Payment: {self.payment_method}")
+        print(f"Status: {self.status}")
+
+
+    # ==========================================
+    # COMPLETE REQUEST
+    # ==========================================
+
+    def complete(self):
+
+        # Prevent completing the same request twice
+        if self.status == "Delivered":
+            print("Request already completed.")
+            return
+
+        # A driver must be assigned first
+        if self.driver is None:
+            print("No driver assigned to this request.")
+            return
+
+        # Request must be assigned before completion
+        if self.status != "Assigned":
+            print("Request must be assigned before completion.")
+            return
+
+        # Mark request as delivered
+        self.status = "Delivered"
+
+        # Add completed delivery to driver
+        self.driver.add_delivery()
+
+        # Make driver available again
+        self.driver.go_online()
+
+
+# ==========================================
+# ROUTEEARNER CLASS
+# ==========================================
+
+class RouteEarner:
+
+    def __init__(self):
+
+        # List containing Driver objects
+        self.drivers = []
+
+
+    # ==========================================
+    # FIND DRIVER BY NAME
+    # ==========================================
+
+    def find_driver(self, name):
+
+        for driver in self.drivers:
+
+            if driver.name == name:
+                return driver
+
+        return None
+
+
+    # ==========================================
+    # FIND DRIVER BY ID
+    # ==========================================
+
+    def find_driver_by_id(self, driver_id):
+
+        for driver in self.drivers:
+
+            if driver.driver_id == driver_id:
+                return driver
+
+        return None
+
+
+    # ==========================================
+    # REGISTER DRIVER
+    # ==========================================
+
+    def register_driver(self, name, phone, vehicle):
+
+        # Check whether driver already exists
+        existing_driver = self.find_driver(name)
+
+        if existing_driver is not None:
+
+            print("Driver already registered.")
+
+            return existing_driver
+
+
+        # Create a new Driver object
+        new_driver = Driver(name, phone, vehicle)
+
+        # Add Driver object to the list
+        self.drivers.append(new_driver)
+
+        # Return the new Driver object
+        return new_driver
+
+
+    # ==========================================
+    # SHOW ALL DRIVERS
+    # ==========================================
+
+    def show_all_drivers(self):
+
+        for driver in self.drivers:
+
+            driver.show_profile()
+
+
+    # ==========================================
+    # SHOW AVAILABLE DRIVERS
+    # ==========================================
+
+    def show_available_drivers(self):
+
+        for driver in self.drivers:
+
+            if driver.available:
+                driver.show_profile()
+
+
+    # ==========================================
+    # FIND FIRST AVAILABLE DRIVER
+    # ==========================================
+
+    def find_available_driver(self):
+
+        for driver in self.drivers:
+
+            if driver.available:
+                return driver
+
+        return None
+
+
+    # ==========================================
+    # FIND DRIVER FOR A REQUEST
+    # ==========================================
+
+    def find_driver_for_request(self, request):
+
+        for driver in self.drivers:
+
+            # Skip unavailable drivers
+            if not driver.available:
+                continue
+
+
+            # CASH REQUEST
+            if request.payment_method == "cash":
+
+                if driver.can_accept_cash():
+                    return driver
+
+
+            # CARD REQUEST
+            elif request.payment_method == "card":
+
+                if driver.can_accept_card():
+                    return driver
+
+
+        # No suitable driver found
+        return None
+
+
+    # ==========================================
+    # ASSIGN REQUEST
+    # ==========================================
+
+    def assign_request(self, request):
+
+        driver = self.find_driver_for_request(request)
+
+
+        if driver is None:
+
+            print("No suitable driver available.")
+
+        else:
+
+            # Connect request to Driver object
+            request.driver = driver
+
+            # Change request status
+            request.status = "Assigned"
+
+            # Driver becomes unavailable
+            driver.go_offline()
+
+            print(f"Request assigned to {driver.name}.")
+
+
+    # ==========================================
+    # UPDATE DRIVER PHONE
+    # ==========================================
+
+    def update_driver_phone(self, driver_id, new_phone):
+
+        driver = self.find_driver_by_id(driver_id)
+
+
+        if driver is None:
+
+            print("Driver not found.")
+
+        else:
+
+            driver.update_phone(new_phone)
+
+            print("Phone number updated successfully.")
+
+
+    # ==========================================
+    # UPDATE DRIVER PROFILE
+    # ==========================================
+
+    def update_driver_profile(
+        self,
+        driver_id,
+        new_phone,
+        new_vehicle
+    ):
+
+        driver = self.find_driver_by_id(driver_id)
+
+
+        if driver is None:
+
+            print("Driver not found.")
+
+        else:
+
+            driver.update_phone(new_phone)
+            driver.update_vehicle(new_vehicle)
+
+            print("Driver profile updated successfully.")
