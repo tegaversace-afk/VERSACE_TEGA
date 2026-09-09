@@ -97,6 +97,19 @@ class Driver:
         else:
             return 0
 
+    def process_payment(self, fare, payment_method):
+
+    service_fee = fare * 0.10
+
+    if payment_method == "card":
+
+        net_payment = fare - service_fee
+        self.wallet_balance += net_payment
+
+    elif payment_method == "cash":
+
+        self.wallet_balance -= service_fee
+
 
     def update_wallet(self):
 
@@ -154,6 +167,8 @@ class Driver:
 
         return True
 
+    
+
 
     # ==========================================
     # DRIVER SUMMARY
@@ -209,29 +224,28 @@ class Request:
 
     def complete(self):
 
-        # Prevent completing the same request twice
-        if self.status == "Delivered":
-            print("Request already completed.")
-            return
+    if self.status == "Delivered":
+        print("Request already completed.")
+        return
 
-        # A driver must be assigned first
-        if self.driver is None:
-            print("No driver assigned to this request.")
-            return
+    if self.driver is None:
+        print("No driver assigned to this request.")
+        return
 
-        # Request must be assigned before completion
-        if self.status != "Assigned":
-            print("Request must be assigned before completion.")
-            return
+    if self.status != "Assigned":
+        print("Request must be assigned before completion.")
+        return
 
-        # Mark request as delivered
-        self.status = "Delivered"
+    self.status = "Delivered"
 
-        # Add completed delivery to driver
-        self.driver.add_delivery()
+    self.driver.process_payment(
+        self.fare,
+        self.payment_method
+    )
 
-        # Make driver available again
-        self.driver.go_online()
+    self.driver.add_delivery()
+
+    self.driver.go_online()
 
 
 # ==========================================
@@ -439,3 +453,68 @@ class RouteEarner:
             driver.update_vehicle(new_vehicle)
 
             print("Driver profile updated successfully.")
+
+# ==========================================
+# TESTING ROUTEEARNER
+# ==========================================
+
+routeearner = RouteEarner()
+
+# Register drivers
+peter = routeearner.register_driver(
+    "Peter",
+    "08011111111",
+    "Honda Accord"
+)
+
+john = routeearner.register_driver(
+    "John",
+    "08022222222",
+    "Toyota Camry"
+)
+
+mary = routeearner.register_driver(
+    "Mary",
+    "08033333333",
+    "Toyota Corolla"
+)
+
+
+# Put all drivers online
+peter.go_online()
+john.go_online()
+mary.go_online()
+
+
+# Create a customer request
+request1 = Request(
+    "Mile 1",
+    "GRA",
+    2500,
+    "card"
+)
+
+
+# Show the request
+request1.show_request()
+
+
+# Assign the request
+routeearner.assign_request(request1)
+
+
+# Show assigned driver
+print(f"Driver: {request1.driver.name}")
+
+
+# Complete the request
+request1.complete()
+
+
+# Show final results
+print()
+print("After completion:")
+print(f"Request Status: {request1.status}")
+print(f"Driver: {request1.driver.name}")
+print(f"Driver Deliveries: {request1.driver.deliveries}")
+print(f"Driver Available: {request1.driver.available}")         
