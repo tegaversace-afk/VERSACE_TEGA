@@ -1,0 +1,13 @@
+import json
+
+driver = {
+    "name": "John",
+    "deliveries": 0,
+    "wallet": 0
+}
+
+with open("john.json", "w") as file:
+    json.dump(driver, file, indent=4)
+    
+with open("John. json", "r") as file:
+    driver = json.load(file)
