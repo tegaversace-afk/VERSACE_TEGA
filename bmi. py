@@ -1,0 +1,15 @@
+# Body mass index calculator 
+
+name = input("What's your name? ")
+weight_kg = float(input("What's your weight in kg? "))
+height_m = float(input("What's your height in meters? "))
+
+bmi = weight_kg / (height_m * height_m)
+if bmi < 20:
+    category = "underweight"
+elif bmi > 20:
+    category = "overweight"
+else:
+     category = "normal"
+print(name + ", your BMI is:" +str(bmi))
+print("this is considered" +  category)
