@@ -1,0 +1,13 @@
+count = 10
+
+for row in range(2):
+    for column in range(2):
+        print(count, end=" ")
+        count += 10
+    print()
+
+person = {
+    "name" :"otage"
+}
+person["city"] = "port harcourt"
+print(person)

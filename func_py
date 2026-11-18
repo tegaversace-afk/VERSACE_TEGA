@@ -1,0 +1,31 @@
+def introduce(name):
+    print(f"hello, {name}")
+introduce("tega")
+introduce("Amadi")
+
+
+def square(number):
+    print(number * number)
+square(3)
+
+def mutiply(number):
+    print(number * 10)
+mutiply(7)
+
+name = "Tega"
+
+def greet():
+    name = "John"
+    print(name)
+
+greet()
+
+print(name)
+
+x = 10
+
+def change():
+    x = x + 5
+    print(x)
+
+change()

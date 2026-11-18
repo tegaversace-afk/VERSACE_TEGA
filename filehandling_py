@@ -1,0 +1,61 @@
+
+
+# using CSV to work in python
+
+# import csv
+
+# pay_per_delivery = 1500
+
+# with open("driver.csv", "w", newline="")as file:
+#     writer = csv.writer(file)
+
+#     writer.writerow(["name","deliveries", 'wallet'])
+#     writer.writerow(["Tega", "25", "25000"])
+#     writer.writerow(["John", "15", "8000"])
+#     writer.writerow(["Mary", "30", "16000"])
+#     writer.writerow(["Gift", "18", "9000"])
+#     writer.writerow(["Sunny", "22", "11000"])
+
+# driver_count = 0
+
+# with open("driver.csv", "r", newline="") as file:
+#     reader = csv.DictReader(file)
+
+#     for row in reader:
+#         if row["name"] == "Gift":
+#             deliveries = int(row["deliveries"])
+#             earnings = deliveries * pay_per_delivery
+
+#             print(f"Gift Earings : {earnings:,}")
+
+
+# # creating a function that saves drivers data or records
+# import json
+
+# def save_driver(driver):
+#     filename = f"{driver['name'].lower()}.json"
+
+#     with open(filename, "w") as file:
+#         json.dump(driver, file, indent=4)
+
+#     print(f"{driver['name']}'s record saved successfully.")
+
+import json
+
+
+def save_driver(driver):
+  filename = f"{driver['name'].lower()}.json"
+
+  with open(filename, "w") as file:
+    json.dump(driver, file, indent=4)
+
+  print(f"{driver['name']}'s record saved successfully.")
+
+
+john = {"name": "John", "deliveries": 27, "wallet": 12000}
+
+mary = {"name": "Mary", "deliveries": 30, "wallet": 16000}
+
+save_driver(john)
+save_driver(mary)
+

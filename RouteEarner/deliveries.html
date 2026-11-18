@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RouteEarner - Deliveries</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <h1>RouteEarner</h1>
+        <p>My Deliveries</p>
+    </header>
+
+    <main>
+        <h2>Recent Deliveries</h2>
+        <div class="filter-buttons">
+    <button type="button" data-filter="all">All</button>
+
+    <button type="button" data-filter="completed">Completed</button>
+
+    <button type="button" data-filter="in-progress">In Progress</button>
+</div>
+<p id="delivery-count">Showing 2 deliveries</p>
+        <button id="show-message-btn" type="button">
+    Show Message
+</button>
+
+<p id="message" hidden></p>
+
+<div class="table-container">
+    <table class="deliveries-table">
+
+        <thead>
+            <tr>
+                <th scope="col">Delivery</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr class="delivery-row" data-status="completed">
+                <td>1</td>
+                <td>Port Harcourt</td>
+                <td>Completed</td>
+            </tr>
+
+            <tr class="delivery-row" data-status="in-progress">
+                <td>2</td>
+                <td>Rumuola</td>
+                <td>In Progress</td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+
+        <p>
+            <a href="index.html">Back to Dashboard</a>
+        </p>
+    </main>
+
+<script src="script.js"></script>
+</body>
+</html>

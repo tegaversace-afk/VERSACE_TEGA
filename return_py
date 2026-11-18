@@ -1,0 +1,34 @@
+def mutiply(number):
+    print(number * 10)
+result = mutiply(7)
+print(result)
+
+def square(number):
+   return number * number 
+result = square(6)
+print(result)
+
+def add(a, b):
+    return a + b
+   
+answer = add(15, 25)
+print(answer)
+
+def multiply(a, b):
+    return a * b
+
+result = multiply(5, 4)
+
+print(result)
+
+def add(a, b):
+    return a + b
+
+x = add(5, 10)
+
+y = add(x, 20)
+
+print(y)
+print(x)
+    
+    

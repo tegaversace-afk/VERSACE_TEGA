@@ -1,0 +1,41 @@
+# name = input("what is your name ?")
+# maths = int(input("what is your maths score ?"))
+# english = int(input("what is your english score ?"))
+# science = int(input("what is your science score ?"))
+
+# total = maths + english + science
+# average = total / 3
+
+# if average >= 60:
+#     status = "pass"
+# else:
+#     status = "fail"
+
+# report = f"""
+
+# Student Result Report
+# Name : {name}
+# Maths : {maths}
+# English : {english}
+# Science : {science}
+# Total : {total}
+# Average : {average:.2f}
+# Status : {status}
+# """
+
+# print(report)
+
+unit = 300
+amount = 10000
+def cal_unit():
+    return amount / unit
+result = cal_unit()
+
+
+print(f'the total unit is: {result:.2f}')
+
+
+
+
+
+

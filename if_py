@@ -1,0 +1,79 @@
+#def greet(name):
+   # return f"Hello {name}"
+#def shout(name):
+    #return f"HELLO {name.upper()}!"
+#def display_message(action, name):
+#     print(action(name))
+# display_message(greet, "Tega")
+# display_message(shout, "Tega")
+# average = 70
+# def pass_fail(average):
+#     return "Pass" if average >= 60 else "Fail"
+# def grade_letter(average):
+#     if average >= 70:
+#         return "A"
+#     elif average >= 60:
+#         return "B"
+#     elif average >= 50:
+#         return "C"
+#     else:
+#         return "F"
+# def evaluate(function, average):
+#     return function(average)
+# status = evaluate(pass_fail, average)
+# #grade = evaluate(grade_letter, average)
+
+
+
+# 
+
+# def pass_fail(average):
+#     return "Pass" if average >= 60 else "Fail"
+
+# def grade_letter(average):
+#     if average >= 70:
+#         return "A"
+#     elif average >= 60:
+#         return "B"
+#     elif average >= 50:
+#         return "C"
+#     else:
+#         return "F"
+
+# def evaluate(function, average):
+#     return function(average)
+
+# average = 70
+
+# status = evaluate(pass_fail, average)
+# grade = evaluate(grade_letter, average)
+
+# print(status)
+# print(grade)
+# tripple = lambda x: x * 3
+# print(tripple(5))
+# def tripple(x):
+#     return x * 3
+# print(tripple(4))
+
+#name = "Tega"
+# greet = lambda greet: f"Hello {name}"
+# print(greet("Tega"))greet = lambda name: f"Hello, {name}
+
+# greet = lambda name: f"Hello, {name}!"
+
+# print(greet("Tega"))
+
+#scores = [45, 80, 55, 90, 30]
+
+# failing_scores = list(filter(lambda score: score <= 60, scores))
+
+# print(failing_scores)
+# triple = lambda x: x * 3
+
+# print(triple(5) )
+
+# total = lambda maths, english, science: maths + english + science
+# print(total(15, 40, 20))
+total = lambda a, b, c : a + b + c
+print(total(10, 20, 30))

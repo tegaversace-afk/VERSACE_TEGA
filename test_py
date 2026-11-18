@@ -1,0 +1,65 @@
+#x = 50
+
+#def test():
+    #y = x + 10
+    #print(y)
+
+#test()
+
+#print(x)
+
+#def landlord_threat():
+    #print("call_barist")
+    #landlord_threat()
+
+def brew_cup(drink, size, temperature):
+    print(f"Brewing a {temperature} {size} {drink}...")
+
+# Call with exact positional alignment
+#brew_cup("Hot", "large", "Latte")
+
+#def brew_custom_cup(drink, size, temperature, milk="whole", sugar=0):
+ #   print(f"Making a {temperature} {size} {drink} with {milk} milk.")
+
+# Correct: Positional arguments first, then keywords to override defaults
+#brew_custom_cup("Latte", "large", "hot", milk="almond", sugar=1)
+
+def test_scope():
+    secret_recipe = "Vanilla Syrup"
+    print(secret_recipe)
+
+test_scope()
+# Now try to print it outside:
+#print(secret_recipe)
+
+menu_price = 4.50
+
+def serve_customer(name):
+    # We can read the global variable naturally
+    print(f"Charging {name} ₦{menu_price:.2f} for their latte.")
+
+serve_customer("Alice")
+menu_price = 4.50  # Global
+
+def update_price(new_price):
+    menu_price = new_price  # This accidentally creates a LOCAL variable!
+    print(f"Local function variable set to: ₦{menu_price:.2f}")
+
+update_price(5.00)
+print(f"Global whiteboard price is: ₦{menu_price:.2f}")
+
+menu_price = 4.50  # Global
+
+def show_price():
+    # Reading is completely safe and permitted
+    print(f"The whiteboard price is: ₦{menu_price:.2f}")
+
+menu_price = 4.50  # Global
+
+def update_price(new_price):
+    global menu_price  # Link this function to the global whiteboard variable
+    menu_price = new_price  # This now updates the global whiteboard!
+    print(f"Whiteboard price updated to ₦{menu_price:.2f}")
+
+update_price(5.00)
+print(f"Current menu price is now: ₦{menu_price:.2f}") # Output: 5.00

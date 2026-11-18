@@ -1,4 +1,5 @@
 from driver import Driver
+from request import Request
 
 peter = Driver(
     "Peter",
@@ -6,6 +7,14 @@ peter = Driver(
     "Toyota Camry"
 )
 
-print(peter.name)
-print(peter.driver_id)
-print(peter.vehicle)
+request1 = Request(
+    "Rumuola",
+    "GRA",
+    5000
+)
+
+request1.driver = peter
+request1.status = "Assigned"
+
+print(request1.driver.name)
+print(request1.status)

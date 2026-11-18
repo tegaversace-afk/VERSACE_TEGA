@@ -1,0 +1,875 @@
+
+# def add(a, b):
+#     return a + b
+#     answer = add(15, 25)
+#     print(answer)
+
+#     def add(a, b):
+#         return a + b
+
+# # Testing the function
+# answer = add(15, 25)
+# print(answer)
+
+# for i in range(5):
+#     print("hale:", i)
+
+# count = 0
+# while count < 5:
+#     print("Amen :" , count)
+#     count = count +1
+
+# import random
+
+# secret_number = random.randint(1, 20)
+# guess = 0
+# attempts = 0
+
+# while guess != secret_number:
+#     guess = int(input("Guess a number between 1 and 20: "))
+#     attempts = attempts + 1
+
+#     if guess < secret_number:
+#         print("Too low!")
+#     elif guess > secret_number:
+#         print("Too high!")
+#     else:
+#         print("You got it! It took you " + str(attempts) + " tries.")
+
+# scores = [4, 8, 12, 10, 6, 2]
+# total = 0
+# for score in scores:
+#     total = total + score
+
+# average = total / len(scores)
+
+# print("scores:" ,scores)
+# print('Total:', total)
+# print("Average:", average)
+# print(scores[-1])
+
+# student_info = {
+#     "Name" : ["Tega", "Bola", "John"],
+#     "Age" : [35, 21, 18],
+#     "Grade": ["A", 'C', 'B']
+# }
+
+# total = 0
+# for Age in student_info["Age"]:
+#     total = total + Age
+
+# print(student_info["Name"][2])
+# print (total)
+
+# def convert_fare(value):
+
+#     try:
+#         fare = float(value)
+#         return fare
+
+#     except ValueError:
+#         return "Invalid fare"
+
+# a = convert_fare("5000")
+# b = convert_fare("2500.50")
+# c = convert_fare("five thousand")
+# d = convert_fare("1000")
+
+# print(a)
+# print(b)
+# print(c)
+# print(d)
+
+# def validate_fare(value):
+
+#     try:
+#         fare = float(value)
+
+#         if fare <= 0:
+#             return "Fare must be greater than zero"
+
+#         if fare > 100000:
+#             return "Fare is too high"
+
+#         return fare
+
+#     except ValueError:
+#         return "Invalid fare"
+
+# def validate_payment_method(method):
+
+#     method = method.lower()
+
+#     if method == "cash":
+#         return "cash"
+
+#     if method == "card":
+#         return "card"
+
+#     return "Invalid payment method"
+
+# fare = ("-5000")
+# payment = validate_payment_method("CASH")
+
+# print(fare)
+# print(payment)
+
+# def get_driver():
+#     name = "Peter"
+#     rating = 4.8
+
+#     return name, rating
+#     print("name", 'rating')
+
+# drivers = [
+#     {
+#         "name": "Tega",
+#         "deliveries": 25,
+#         "wallet": 12000,
+#         "available": True
+#     },
+#     {
+#         "name": "John",
+#         "deliveries": 27,
+#         "wallet": 14000,
+#         "available": False
+#     },
+#     {
+#         "name": "Gift",
+#         "deliveries": 30,
+#         "wallet": 15000,
+#         "available": True
+#     }
+# ]
+# drivers[0]["i.d number"] = 1234
+# drivers[2]["wallet"] += 5000
+# print(drivers[2]["wallet"])
+# print(drivers["wallet"])
+# print(drivers["i.d number"])
+# print(drivers.keys[])
+
+# for driver in drivers:
+#     print(driver["name"])
+# for driver in drivers:
+
+# for driver in drivers:
+#     print(driver["name"])
+
+
+
+
+#     if driver["available"]:
+#         print(driver["name"])
+
+# print(driver["wallet"])
+# print(driver["name"])
+
+# 
+
+
+# 
+# def get_cash_drivers(drivers);
+#     cash_drivers = []
+#     for driver in drivers:
+#         if driver ["available"]:
+#             if driver["cash_allowed"]:
+#                 cash_drivers.append(driver)
+
+#     return cash_drivers
+
+# drivers = [
+#     {
+# #         "name": "Tega",
+#         "deliveries": 25,
+#         "wallet": 12000,
+#         "available": True
+#     },
+#     {
+#         "name": "John",
+#         "deliveries": 27,
+#         "wallet": 14000,
+#         "available": False
+#     },
+#     {
+#         "name": "Gift",
+#         "deliveries": 30,
+#         "wallet": 15000,
+#         "available": True
+#     }
+# ]
+
+
+# requests = [
+#     {
+#         "request_id": "RE001",
+#         "pickup": "Mile 3",
+#         "destination": "Town",
+#         "fare": 6000,
+#         "available": True,
+#     },
+
+#     {
+#         "request_id": "RE002",
+#         "pickup": "Rumuola",
+#         "destination": "GRA",
+#         "fare": 5000,
+#         "available": True,
+#     },
+
+#     {
+#         "request_id": "RE003",
+#         "pickup": "D-Line",
+#         "destination": "Ada George",
+#         "fare": 4500,
+#         "available": True,
+#     },
+# ]
+
+# def get_request_id(requests):
+#     request_id = []
+
+#     for request in requests:
+#         if request["fare"] <= 6000:
+#             if request["available"]:
+#                 request_id.append(request["request_id"])
+
+    
+#     return request_id
+# request_id = get_request_id(requests)
+
+# print(request_id)
+
+# numbers = [3, 6, 9, 12, 14]
+# double = [number * 2  for number in numbers]
+# print(double)
+
+# results = [
+#     request["wallet"]
+# for request in requests
+# if request["available"]
+
+
+# ]    
+
+# drivers = [
+#     {"name": "Tega", "available": True, "cash_allowed": True},
+#     {"name": "John", "available": True, "cash_allowed": False},
+#     {"name": "Gift", "available": False, "cash_allowed": True},
+#     {"name": "Mary", "available": True, "cash_allowed": True}
+# ]
+
+# name = [
+#     driver["name"]
+#     for driver in drivers
+#     if driver["available"]
+
+# ]
+
+# print(name)
+
+# requests = [
+#     {"id": "RE001", "fare": 6000, "available": True},
+#     {"id": "RE002", "fare": 4500, "available": True},
+#     {"id": "RE003", "fare": 8000, "available": False},
+#     {"id": "RE004", "fare": 7000, "available": True}
+# ]
+
+# drivers = [
+#     {"name": "Tega", "deliveries": 25, "available": True, "wallet": 12000},
+#     {"name": "John", "deliveries": 27, "available": True, "wallet": 14000},
+#     {"name": "Sunny", "deliveries": 19, "available": False, "wallet": 10000},
+#     {"name": "Gift", "deliveries": 30, "available": True, "wallet": 15000},
+#     {"name": "Mary", "deliveries": 15, "available": True, "wallet": 9000}
+# ]
+
+# driver_stat = [
+#     (driver["name"], driver["deliveries"])
+#     for driver in drivers
+#     if driver["deliveries"] >= 20
+
+# ]
+# print(driver_stat)
+
+
+# def get_qualified_drivers(drivers):
+#     return[
+#         driver["name"]
+#         for driver in drivers
+#         if driver["available"]
+#         and driver["deliveries"] >= 20
+#         and driver["wallet"] > -6000
+
+#     ]
+# Qualified = get_qualified_drivers(drivers)
+# print(Qualified)
+
+# Deliveries = sorted([drivers["deliveries"]for driver in drivers])
+# print(Deliveries)
+
+
+# deliveries = sorted([driver["deliveries"] for driver in drivers])
+# print(deliveries)
+# # Output: [15, 19, 25, 27, 30]
+
+# drivers = [
+#     {"name": "Tega", "deliveries": 25, "rating": 4.8, "available": True},
+#     {"name": "John", "deliveries": 27, "rating": 4.9, "available": True},
+#     {"name": "Sunny", "deliveries": 19, "rating": 4.3, "available": False},
+#     {"name": "Gift", "deliveries": 30, "rating": 4.9, "available": True},
+#     {"name": "Mary", "deliveries": 15, "rating": 4.1, "available": True}
+# ]
+
+# available_drivers = [
+#     driver
+#     for driver in drivers
+#     if driver["available"]
+# ]
+
+# sorted_available = sorted(
+#     available_drivers,
+#     key=lambda driver: driver["rating"],
+#     reverse=True
+# )
+
+# print(available_drivers)
+# sorted_names =[
+#     driver["name"]
+#     for driver in sorted_drivers
+# ]
+# print(sorted_names)
+
+
+
+
+# sorted_names = [driver["name"] for driver in sorted_drivers]
+
+# print(sorted_names)
+
+# available_drivers = [
+#     driver
+#     for driver in drivers
+#     if driver["available"]
+
+# ]
+# sorted_drivers = sorted(
+#     available_drivers,
+#     key=lambda driver : driver["rating"],
+#     reverse = True
+# )
+
+# drivers = [
+#     {"name": "Tega", "rating": 4.8, "available": True, "cash_allowed": True},
+#     {"name": "John", "rating": 4.9, "available": True, "cash_allowed": False},
+#     {"name": "Sunny", "rating": 4.3, "available": False, "cash_allowed": True},
+#     {"name": "Gift", "rating": 4.9, "available": True, "cash_allowed": True},
+#     {"name": "Mary", "rating": 4.1, "available": True, "cash_allowed": True}
+# ]
+# def find_best_cash_driver(drivers):
+#     best_available_drivers =[
+#         driver
+#         for driver in drivers
+#         if driver["available"] and  driver["cash_allowed"]
+
+#     ]
+
+#     sorted_drivers = sorted(
+#         best_available_drivers,
+#         key=lambda driver: driver["rating"],
+#         reverse = True
+#     )
+#     if not sorted_drivers:
+#         return None
+
+#     return sorted_drivers[0]
+
+
+# best_driver = find_best_cash_driver(drivers)
+# print(best_driver["name"])
+
+# request = {
+#     "pickup": "Mile 3",
+#     "destination": "GRA",
+#     "fare": 5000,
+#     "payment_method": "cash"
+# }
+
+
+# def find_driver_for_request(drivers, request):
+#    if request["payment_method"] == "cash":
+#        eligible_drivers = [
+#            driver
+#            for driver in drivers
+#            if driver["available"] and driver["cash_allowed"]
+
+#        ] 
+
+
+#    elif request["payment_method"] == "card":
+#        eligible_drivers = [
+#            driver
+#            for driver in drivers
+#            if driver["available"]
+#        ]
+#    else:
+#        return None
+
+#    sorted_drivers = sorted(
+#     eligible_drivers,
+#     key=lambda driver : driver["rating"],
+#     reverse = True
+#    )
+
+#    if not sorted_drivers:
+#        return None
+#    return sorted_drivers[0]
+
+# best_driver = find_driver_for_request(drivers, request)
+# print(best_driver["name"])
+
+# drivers = [
+#     {"name": "Tega", "rating": 4.8, "deliveries": 25, "available": True},
+#     {"name": "John", "rating": 4.9, "deliveries": 27, "available": True},
+#     {"name": "Gift", "rating": 4.9, "deliveries": 30, "available": True},
+#     {"name": "Mary", "rating": 4.1, "deliveries": 15, "available": False}
+# ]
+
+# available_drivers = [
+#     driver
+#     for driver in drivers
+#         if driver["available"]
+# ]
+
+# best_driver = max(
+# available_drivers,
+# key=lambda driver: (
+#     driver["rating"],
+#     driver["deliveries"]
+# )
+# )
+
+# print(best_driver["name"])
+
+# def find_best_driver(drivers):
+#     best_drivers = [
+#         driver
+#         for driver in drivers
+#         if driver["available"]    
+
+#     ]
+
+#     if not best_drivers:
+#         return None
+#     # else: return best_driver
+
+#     highest_rated_driver = max(
+#     best_drivers,
+#     key=lambda driver: driver["rating"]
+#     )
+
+#     return highest_rated_driver
+# print(find_best_driver(drivers))
+
+# drivers = [
+#     {
+#         "name": "Tega",
+#         "rating": 4.8,
+#         "deliveries": 25,
+#         "available": True,
+#         "cash_allowed": True
+#     },
+#     {
+#         "name": "John",
+#         "rating": 4.9,
+#         "deliveries": 27,
+#         "available": True,
+#         "cash_allowed": False
+#     },
+#     {
+#         "name": "Gift",
+#         "rating": 4.9,
+#         "deliveries": 30,
+#         "available": True,
+#         "cash_allowed": True
+#     },
+#     {
+#         "name": "Mary",
+#         "rating": 4.1,
+#         "deliveries": 15,
+#         "available": False,
+#         "cash_allowed": True
+#     }
+# ]
+
+# print(drivers[0]["name"])
+# print(drivers[3]["available"])
+
+# aproved = []
+
+# for driver in drivers:
+#     if driver["available"] and driver["cash_allowed"]:
+#         aproved.append[driver]
+
+
+
+# for d in aproved:
+#     print(driver["na
+#     {"name": "Tega", "rating": 4.8, "deliveries": 25, "available": True},
+#     {"name": "John", "rating": 4.9, "deliveries": 27, "available": True},
+#     {"name": "Gift", "rating": 4.9, "deliveries": 30, "available": True},
+#     {"name": "Mary", "rating": 4.1, "deliveries": 15, "available": False}
+# ]
+
+# approve = []
+
+# for driver in drivers:
+#     if driver["available"] and driver["cash_allowed"]:
+#         approve.append(driver)
+
+
+# print(approve)
+# for a in approve:
+#     print(f"Rating:{a["rating"]}, Deliveries:{a["deliveries"]}")
+# Let's see who made the list
+# for d in approve:
+#     print(d["name"])
+        
+
+
+
+
+
+
+
+
+
+
+
+# def find_driver_for_request(drivers, request):
+
+#     payment_method = request["payment_method"]
+
+#     if payment_method == "cash":
+
+#         eligible_drivers = [
+#             driver
+#             for driver in drivers
+#             if driver["available"]
+#             and driver["cash_allowed"]
+#         ]
+
+#     elif payment_method == "card":
+
+#         eligible_drivers = [
+#             driver
+#             for driver in drivers
+#             if driver["available"]
+#         ]
+
+#     else:
+#         return None
+
+#     if not eligible_drivers:
+#         return None
+
+#     best_driver = max(
+#         eligible_drivers,
+#         key=lambda driver: (
+#             driver["rating"],
+#             driver["deliveries"]
+#         )
+#     )
+
+#     return best_driver
+
+# route = [
+#     "D-Line",
+#     "Mile 3",
+#     "GRA",
+#     "Rumuola",
+#     "Ada George"
+# ]
+
+# current_location = "GRA"
+
+# requests = [
+#     {"request_id": "RE001", "pickup": "Mile 3", "destination": "Rumuola"},
+#     {"request_id": "RE002", "pickup": "Rumuola", "destination": "Ada George"},
+#     {"request_id": "RE003", "pickup": "GRA", "destination": "Ada George"},
+#     {"request_id": "RE004", "pickup": "Ada George", "destination": "Rumuola"}
+# ]
+# approved = sorted(
+#     requests,
+#     key=lambda request:
+#     (request["request_id"],
+#         request["pickup"]
+#     )
+# )
+# approved = []
+
+# for request in requests:
+
+#     request_details = f"{request["request_id"]} : {request["destination"]}"
+#     approved.append(request_details)
+
+# print(approved)
+
+
+
+# approved = [
+#     request
+#     for request in requests
+#     if route.index(request["pickup"]) > route.index(current_location) 
+#     and route.index(request["destination"]) > route.index(request["pickup"])
+# ]
+
+# best_approved = max(
+#     approved,
+#     key=lambda request : 
+#     (request["request_id"],
+#      request["pickup"]
+#     )
+# )
+
+# print(best_approved)
+
+# library = [
+#     ("Inception", 2010, "Sci-Fi", 8.8),
+#     ("The Dark Knight", 2008, "Action", 9.0),
+#     ("Interstellar", 2014, "Sci-Fi", 8.6),
+#     ("Toy Story", 1995, "Animation", 8.3)
+# ]
+# second_movie = library[1]
+# movie_name, movie_year, movie_genre, movie_rating = second_movie
+# print(f"{movie_name} was released in {movie_year} and has a rating of {movie_rating}")
+
+# for movie_name, movie_year, movie_genre, movie_rating in library:
+#     if movie_genre == "sci_fi":
+#         print(f" - {movie_name}") 
+
+
+# highest_rated = library[0]
+# for movie in library:
+#     if movie[1] > highest_rated[1]:
+#         highest_rated = movie_genre
+
+# top_name, top_year, top_genre, top_rating = highest_rated
+
+# print(f"\nHighest rated movie: {top_name}({top_rating}/10)")
+
+# Corrected library list with tuples ()
+# library = [
+#     ("Inception", 2010, "Sci-Fi", 8.8),
+#     ("The Dark Knight", 2008, "Action", 9.0),
+#     ("Interstellar", 2014, "Sci-Fi", 8.6),
+#     ("Toy Story", 1995, "Animation", 8.3)
+# ]
+
+# # Task 1: Unpack second movie
+# title, year, genre, rating = library[1]
+# print(f"{title} was released in {year} and has a rating of {rating}.")
+
+# # Task 2: Filter Sci-Fi movies
+# print("\nSci-Fi Movies:")
+# for title, year, genre, rating in library:
+#     if genre == "Sci-Fi":
+#         print(f"- {title}")
+
+# # Task 3: Highest rated movie
+# highest_rated = library[0]
+# for movie in library:
+#     if movie[3] > highest_rated[3]:
+#         highest_rated = movie
+
+# print(f"\nHighest rated movie: {highest_rated[0]} with a {highest_rated[3]} rating.")
+
+# tega = Driver(
+#     name="Tega",
+#     deliveries=19,
+#     wallet=10000,
+#     rating=4.8,
+#     current_location="GRA"
+# )
+
+# john = Driver(
+#     name="John",
+#     deliveries=27,
+#     wallet=14000,
+#     rating=4.9,
+#     current_location="Mile 3"
+# )
+
+# gift = Driver(
+#     name="Gift",
+#     deliveries=29,
+#     wallet=15000,
+#     rating=4.7,
+#     current_location="Rumuola"
+# )
+
+# mary = Driver(
+#     name="Mary",
+#     deliveries=15,
+#     wallet=9000,
+#     rating=4.9,
+#     current_location="D-Line"
+# )
+
+# drivers = [tega, john, gift, mary]
+
+# route = [
+#     "D-Line",
+#     "Mile 3",
+#     "GRA",
+#     "Rumuola",
+#     "Ada George"
+# ]
+
+# request = {
+#     "id": "RE101",
+#     "pickup": "Rumuola",
+#     "destination": "Ada George",
+#     "fare": 7000,
+#     "priority": 5,
+#     "status": "pending"
+# }
+
+# with open("Routeearner.txt", "w") as file:
+#     file.write("Driver : Tega\n")
+#     file.write("Deliveries : 30\n")
+#     file.write("Wallet : 12000\n")
+
+
+
+# with open("Routeearner.txt", "a") as file:
+#     file.write('Driver: John\n')
+#     file.write("Deliveries : 24\n")
+#     file.write("Wallet : 8000\n")
+
+# with open("Routeearner.txt", "a") as file:
+#     file.write('Driver: Jane\n')
+#     file.write("Deliveries : 14\n")
+#     file.write("Wallet : 5000\n")
+
+# with open("Routeearner.txt", "a") as file:
+#     file.write('Driver: Mary\n')
+#     file.write("Deliveries : 20\n")
+#     file.write("Wallet : 11000\n")
+
+# with open("Routeearner.txt", "r") as file:import numpy as np
+import pandas as pd
+
+
+# 1. Simulate Loading Messy Data (or read from a CSV using pd.read_csv('students.csv'))
+# def load_raw_data():
+data = {
+      "student_id": ["S001", "S002", "S003", "S002", "S004", "S005"],
+      "name": ["  Alice ", "BOB", "Charlie", "BOB", None, "david "],
+      "age": ["15", "16", "unknown", "16", "14", "17"],
+      "score": [85.5, 90.0, 78.0, 90.0, None, 88.5],
+      "grade": ["Grade 10", "Grade_11", "Grade 10", "Grade_11", "Grade 9", "10"],
+  }
+df = pd.DataFrame(data)
+print(df)
+
+#     drivers_info = file.read()
+# print(drivers_info)
+# print(drivers_info.strip())
+# print(drivers_info)
+# print(drivers_info)
+
+# with open("Routeearner.txt", "r") as file:
+#     for line in file:
+#         print(line, end="")
+# driver_count = 0
+# with open("Routeearner.txt", "r") as file:
+#     for line in file:
+#         driver_count += 2
+# print(f"Total drivers : {driver_count}")
+
+# name,deliveries,wallet
+# Tega,25,12000
+# John,15,8000
+# Mary,30,16000
+# Gift,18,9000
+# Sunny,22,11000
+
+# import csv
+
+# pay_per_delivery = 1500
+
+# with open("driver.csv", "w", newline="")as file:
+#     writer = csv.writer(file)
+
+#     writer.writerow(["name","deliveries", 'wallet'])
+#     writer.writerow(["Tega", "25", "25000"])
+#     writer.writerow(["John", "15", "8000"])
+#     writer.writerow(["Mary", "30", "16000"])
+#     writer.writerow(["Gift", "18", "9000"])
+#     writer.writerow(["Sunny", "22", "11000"])
+
+# driver_count = 0
+
+# with open("driver.csv", "r", newline="") as file:
+#     reader = csv.DictReader(file)
+
+#     for row in reader:
+#         if row["name"] == "Gift":
+#             deliveries = int(row["deliveries"])
+#             earnings = deliveries * pay_per_delivery
+
+#             print(f"Gift Earings : {earnings:,}")
+
+
+
+
+#     next(reader)
+
+#     for row in reader:
+#         deliveries = int(row[1])
+
+#         if deliveries >= 20:
+#             driver_count += 1
+
+# print(driver_count)
+
+# from pathlib import Path
+
+# folder = Path("records")
+
+# folder.mkdir(exist_ok=True)
+
+# file_path = folder / "drivers.csv"
+
+# print(file_path)
+
+
+# import csv
+# from pathlib import Path
+
+# folder = Path("records")
+# folder.mkdir(exist_ok=True)
+
+# file_path = folder / "drivers.csv"
+
+# with open(file_path, "w", newline="") as file:
+#     writer = csv.writer(file)
+
+#     writer.writerow(["name", "deliveries", "wallet"])
+#     writer.writerow(["Tega", 25, 12000])
+#     writer.writerow(["John", 15, 8000])
+#     writer.writerow(["Tega", "25", "25000"])
+#     writer.writerow(["John", "15", "8000"])
+#     writer.writerow(["Mary", "30", "16000"])
+#     writer.writerow(["Gift", "18", "9000"])
+#     writer.writerow(["Sunny", "22", "11000"])
+
+#     with open()
+
+# import json
+
+# with open("driver.json", "r") as file:
+#     driver = json.load(file)
+
+#     print(driver["name"])
+#     print(driver["wallet"])
+

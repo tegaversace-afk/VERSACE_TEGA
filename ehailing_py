@@ -1,0 +1,147 @@
+# driver_name = input("what is your name ?")
+
+# number_of_deliveries = int(input("how many deliveries ?"))
+
+# pay_per_delivery = 1500
+
+# calc_earnings = lambda deliveries, pay, bonus: (deliveries * pay) + bonus
+# if  numbers_of_deliveries >=30:
+
+#     bonus = 5000
+#     fuel_allowance = 1000
+
+# else:
+
+#     bonus = 0
+# total_earnings = calc_earnings(numbers_of_deliveries, pay_per_delivery, bonus)
+
+# report = f"""
+
+# Driver Earning System
+
+# Driver Name : {drivers_name}
+# Numbers Of Deliveries : {numbers_of_deliveries}
+
+# Pay Per Delivery : {pay_per_delivery}
+
+# Bonus : {bonus}
+
+# Total Earnings : {total_earnings}
+
+# """
+
+# print(report)
+
+# drivers = ["Tega", "John", "Mary", "Grace"]
+# hours = [8,0,7,0]
+# for driver,hour in zip(drivers, hours):
+#     if hour > 0:
+#         print(f"{driver} is online")
+#     else:
+#         print(f"{driver} is offline")
+
+# drivers = ["Tega", "John", "Mary", "Grace"]
+# deliveries = [25, 18, 32, 20]
+# pay_per_delivery = 1500
+
+# calculate_earnings = lambda deliveries, pay, bonus, fuel: (deliveries * pay) + bonus + fuel
+
+# for driver, delivery in zip(drivers, deliveries):
+#     if delivery >= 30:
+#         bonus = 5000
+#         fuel_allowance = 1000
+
+#     elif delivery >= 20: 
+#         bonus = 5000
+#         fuel_allowance = 0  
+
+#     else:
+#         bonus = 0
+#         fuel_allowance = 0
+
+#     total_earnings = calculate_earnings(delivery, pay_per_delivery, bonus, fuel_allowance)
+
+#     report = f"""
+# Driver Earning System
+# ---------------------
+# Driver Name : {driver}
+# Number Of Deliveries : {delivery}
+# Pay Per Delivery : ₦{pay_per_delivery}
+# Bonus : ₦{bonus}
+# Fuel Allowance : ₦{fuel_allowance}
+# Total Earnings : ₦{total_earnings}
+# """
+
+#     print(report)
+
+# drivers = ["Tega", "John", "Mary", "Grace"]
+# deliveries = [25, 18, 32, 20]
+# phone_numbers = [08013456789, 08021456789, 080312456789, 080412356789]
+# ratings = [1.98, 3.67, 2.54, 5.34]
+# wallet = [12.000, 11.456, 10.387, 15,345]
+# pay_per_delivery = 1500
+# hours = [8,0,7,0]
+# for driver,hour in zip(drivers, hours):
+#     if hour > 0:
+#         print(f"{driver} is online")
+#     else:
+#         print(f"{driver} is offline")
+
+# # Define the function once outside the loop
+# calculate_earnings = lambda deliv, pay, bonus, fuel: (deliv * pay) + bonus + fuel
+
+# for driver, delivery in zip(drivers, deliveries):
+#     if delivery >= 30:
+#         bonus = 5000
+#         fuel_allowance = 1000
+#     elif delivery >= 20: 
+#         bonus = 5000
+#         fuel_allowance = 0  
+#     else:
+#         bonus = 0
+#         fuel_allowance = 0
+
+#     total_earnings = calculate_earnings(delivery, pay_per_delivery, bonus, fuel_allowance)
+
+#     report = f"""
+# Driver Earning System
+# ---------------------
+# Driver Name : {driver}
+# Number Of Deliveries : {delivery}
+# Pay Per Delivery : ₦{pay_per_delivery:,}
+# Bonus : ₦{bonus:,}
+# Fuel Allowance : ₦{fuel_allowance:,}
+# Total Earnings : ₦{total_earnings:,}
+# """
+#     print(report)
+
+# driver = {
+#     "name": "Tega",
+#     "deliveries": 25,
+#     "rating": 4.9,
+#     "online": True
+# }
+# print(driver['rating'])
+# driver["deliveries"] += 1
+# print(driver["deliveries"])
+
+# "name"
+# "phone"
+# "vehicle"
+# "deliveries"
+# "rating"
+# "wallet"
+# "online"
+
+
+
+
+
+
+
+
+
+numbers = [2,1,4,6,9,7,3,8]
+lowest = min(numbers)
+print(lowest)
+

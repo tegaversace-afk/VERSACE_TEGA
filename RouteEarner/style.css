@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    margin: 0;
+}
+
+.site-header {
+    background-color: #1d4ed8;
+    color: white;
+    padding: 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-logo {
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+}
+
+main {
+    padding: 24px;
+}
+
+.dashboard-cards {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    flex: 1;
+}
+
+.card h3 {
+    font-size: 16px;
+}
+
+.card p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+button {
+    background-color: #166534;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.button-link {
+    display: inline-block;
+    background-color: #166534;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .dashboard-cards {
+        flex-direction: column;
+    }
+}
+
+.deliveries-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    margin-top: 20px;
+}
+
+.deliveries-table th,
+.deliveries-table td {
+    border: 1px solid #e2e8f0;
+    padding: 12px;
+    text-align: left;
+}
+
+.deliveries-table th {
+    background-color: #166534;
+    color: white;
+}
+
+.deliveries-table tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.filter-buttons button {
+    background-color: #166534;
+}
+
+.filter-buttons button:hover {
+    background-color: #14532d;
+}

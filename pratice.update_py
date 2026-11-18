@@ -42,6 +42,8 @@ class Driver:
         self.credited_bonus = 0
         self.credited_fuel = 0
 
+        self.restriction_start_balance = None
+
 
     # ==========================================
     # DRIVER PROFILE
@@ -97,19 +99,50 @@ class Driver:
         else:
             return 0
 
-    def process_payment(self, fare, payment_method):
+    def process_payment(self, fare, payment_method, discount_rate=0):
 
-    service_fee = fare * 0.10
+        service_fee = fare * 0.10
 
-    if payment_method == "card":
+        discount_amount = fare * discount_rate
+        discounted_fare = fare - discount_amount
 
-        net_payment = fare - service_fee
-        self.wallet_balance += net_payment
+        if payment_method == "cash":
+            wallet_change = -service_fee
+            self.wallet_balance += wallet_change
 
-    elif payment_method == "cash":
+            self.check_cash_restriction()
 
-        self.wallet_balance -= service_fee
+            return discounted_fare, service_fee, wallet_change
 
+        elif payment_method == "card":
+
+            wallet_change = fare - service_fee
+            self.wallet_balance += wallet_change
+
+            self.update_recovery()
+
+            return discounted_fare, service_fee, wallet_change
+
+    def check_cash_restriction(self):
+
+        if self.wallet_balance <= -6000:
+            if self.restriction_start_balance is None:
+                self.restriction_start_balance = self.wallet_balance
+    
+    def calculate_recovery(self):
+        if self.restriction_start_balance is None:
+            return 0
+
+        return self.wallet_balance - self.restriction_start_balance
+    def update_recovery(self):
+
+        if self.restriction_start_balance is None:
+            return
+
+        recovery = self.calculate_recovery()
+
+        if recovery >= 4200:
+            self.restriction_start_balance = None
 
     def update_wallet(self):
 
@@ -238,14 +271,20 @@ class Request:
 
     self.status = "Delivered"
 
-    self.driver.process_payment(
-        self.fare,
-        self.payment_method
-    )
+    customer_paid, service_fee, wallet_change = self.driver.process_payment(
+    self.fare,
+    self.payment_method,
+    self.discount_rate
+)
+
+    self.customer_paid = customer_paid
+    self.service_fee = service_fee
+    self.wallet_change = wallet_change
 
     self.driver.add_delivery()
 
     self.driver.go_online()
+
 
 
 # ==========================================
@@ -517,4 +556,26 @@ print("After completion:")
 print(f"Request Status: {request1.status}")
 print(f"Driver: {request1.driver.name}")
 print(f"Driver Deliveries: {request1.driver.deliveries}")
-print(f"Driver Available: {request1.driver.available}")         
+print(f"Driver Available: {request1.driver.available}")    
+
+print()
+print("Peter wallet before new request:")
+print(f"₦{peter.wallet_balance:,}")
+
+test_request = Request(
+    "Mile 1",
+    "GRA",
+    4000,
+    "card"
+)
+
+test_request.driver = peter
+test_request.status = "Assigned"
+
+test_request.complete()
+
+print()
+print("After card request:")
+print(f"Peter Wallet: ₦{peter.wallet_balance:,}")
+print(f"Peter Deliveries: {peter.deliveries}")
+print(f"Peter Available: {peter.available}")

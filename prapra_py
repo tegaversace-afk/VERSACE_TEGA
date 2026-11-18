@@ -1,0 +1,52 @@
+#verb = input("give me a verb")
+#print("i can" + verb + " " + "better than you")
+#print(verb * 5)
+
+#secret_number = 7
+#answer = int(input("what is my secret number ?"))
+#if answer == 7:
+    #print("you are right !!!")
+#else:
+   # print("you are wrong !!!")
+
+#def solution(name):
+#name = 'Tunde'
+#age = 30
+#address = '5 adeoma street GRA Portharcourt'
+#print(f'hello my name is {name} i am {age} years old i live at No {address}')
+#def solution(name)
+#name = input("what is your name ?")
+#print(f"Hello, {name} , Welcome to Talent Nation")
+#mysum = 0
+#for i in range(2, 9, 3):
+    #mysum += i
+   # if mysum == 5:
+       # break
+   # mysum += 1
+
+#print(mysum)
+an_letters = "gefhilmnorsxAEFHILMNORSX"
+word = input("i will cheer for you! enter a word: ")
+times = int(input("Enthutiasm level (1 - 10): "))
+
+for w in word:
+    if w in an_letters:
+        print("Give me an" + w + ":" + w)
+    else:
+        print("Give me a" + w + ":" + w)
+
+print("What does that spell ?")
+for i in range (times):
+    print(word, "!!!")
+
+
+    total = a + b + c
+    average = round(total / 3, 2)
+    maximum = max(a, b, c)
+    #return f"Student: {name}\nSum: {total}\nAverage: {average}\nMaximum: {maximum}"
+
+
+
+
+
+

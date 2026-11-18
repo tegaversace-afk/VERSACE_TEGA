@@ -1,0 +1,57 @@
+#  itterating through a drivers list
+
+# drivers = ["Tega", "John", "Gift", "Sunny"]
+# for driver in drivers:
+#     print(driver)
+
+# this example shows iteration  levels
+
+# drivers = ["Tega", "John", "Gift"]
+
+# driver_iterator = iter(drivers)
+
+# print(next(driver_iterator))
+# print(next(driver_iterator))
+# print(next(driver_iterator))
+
+# this example use iteration to create a desired list
+
+# drivers = [
+#     {"name": "Tega", "rating": 4.8},
+#     {"name": "John", "rating": 4.9},
+#     {"name": "Gift", "rating": 4.7}
+# ]
+
+# for driver in drivers:
+#     print(driver["name"], driver["rating"])
+
+# import numpy as np
+# import pandas as pd
+
+import csv
+
+with open("driver.csv", "r", newline="") as file:
+    reader = csv.DictReader(file)
+
+
+# 1. Simulate Loading Messy Data (or read from a CSV using pd.read_csv('students.csv'))
+def load_raw_data():
+  data = {
+      "student_id": ["S001", "S002", "S003", "S002", "S004", "S005"],
+      "name": ["  Alice ", "BOB", "Charlie", "BOB", None, "david "],
+      "age": ["15", "16", "unknown", "16", "14", "17"],
+      "score": [85.5, 90.0, 78.0, 90.0, None, 88.5],
+      "grade": ["Grade 10", "Grade_11", "Grade 10", "Grade_11", "Grade 9", "10"],
+  }
+
+  for row in reader:
+     modigo = f'{"student_id"} : {"name"}'
+     
+print(modigo)
+
+
+
+
+
+
+#   return pd.DataFrame(data)

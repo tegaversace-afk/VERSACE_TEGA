@@ -1,0 +1,10 @@
+print("hello friend")
+name = input("what is your name ?")
+print("Welcom" + "," + name)
+secret_number = 0
+while secret_number != 7:
+ secret_number = int(input("Guess my secret number?"))
+if secret_number ==7:
+    print("Congratulations!, you guessed the number")
+else:
+    print("Wrong guess. Try again !")

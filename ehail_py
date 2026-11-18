@@ -1,0 +1,1227 @@
+# drivers = ["Tega", "John", "Mary", "Grace"]
+# deliveries = [25, 18, 32, 20]
+# phone_numbers = ["08013456789", "08021456789", "080312456789", "080412356789"]
+# rating = [1.98, 3.67, 2.54, 5.34]
+# wallet = [12000, 11456, 10387, 15045]
+# pay_per_delivery = 1500
+# hours = [8,0,7,0]
+# for driver, hour in zip(drivers, hours):
+#     if hour > 0:
+#         print(f"{driver} is online")
+#     else:
+#         print(f"{driver} is offline")
+
+# # Define the function once outside the loop
+# calculate_earnings = lambda deliv, pay, bonus, fuel: (deliv * pay) + bonus + fuel
+
+# for driver,delivery, hour, phone,rat,wal in zip(drivers, deliveries, hours, phone_numbers, rating, wallet):
+#     if delivery >= 30:
+#         bonus = 5000
+#         fuel_allowance = 1000
+#     elif delivery >= 20: 
+#         bonus = 5000
+#         fuel_allowance = 0  
+#     else:
+#         bonus = 0
+#         fuel_allowance = 0
+
+#     total_earnings = calculate_earnings(delivery, pay_per_delivery, bonus, fuel_allowance)
+
+#     report = f"""
+# Driver Earning System
+# ---------------------
+# Driver Name : {drivers}
+# Number Of Deliveries : {delivery}
+# Phone Numbers : {phone_numbers}
+# Rating : {rating}
+# Wallet : {wallet}
+# Pay Per Delivery : ₦{pay_per_delivery:,}
+# Bonus : ₦{bonus:,}
+# Fuel Allowance : ₦{fuel_allowance:,}
+# Total Earnings : ₦{total_earnings:,}
+# """
+#     print(report)
+
+# drivers = ["Tega", "John", "Mary", "Grace"]
+# deliveries = [25, 0, 32, 20]
+# phone_numbers = ["08013456789", "08021456789", "080312456789", "080412356789"]
+# rating = [1.98, 3.67, 2.54, 5.34]
+# wallet = [12000, 11456, 10387, 15345]
+# pay_per_delivery = 1500
+# hours = [8, 0, 7, 0]
+
+# for driver, hour in zip(drivers, hours):
+#     if hour > 0:
+#         status = "online"
+#     else:
+#         status = "offline"
+
+
+# calculate_earnings = lambda deliv, pay, bonus, fuel: (deliv * pay) + bonus + fuel
+
+
+# for driver, delivery, phone, rat, wall, hour in zip(drivers, deliveries, phone_numbers, rating, wallet, hours):
+#     if delivery >= 30:
+#         bonus = 5000
+#         fuel_allowance = 1000
+#     elif delivery >= 20: 
+#         bonus = 5000
+#         fuel_allowance = 0  
+#     else:
+#         bonus = 0
+#         fuel_allowance = 0
+
+#     total_earnings = calculate_earnings(delivery, pay_per_delivery, bonus, fuel_allowance)
+
+#     report = f"""
+# Driver Profile
+# ---------------------
+# Driver Name : {driver}
+# Number Of Deliveries : {delivery}
+# Phone Number : {phone}
+# Rating : {rat}
+# Wallet : ₦{wall:,}
+# Status : {status}
+# Pay Per Delivery : ₦{pay_per_delivery:,}
+# Bonus : ₦{bonus:,}
+# Fuel Allowance : ₦{fuel_allowance:,}
+# Total Earnings : ₦{total_earnings:,}
+# """
+#     print(report)
+
+# drivers = ["Tega", "John", "Mary", "Grace"]
+# deliveries = [25, 18, 32, 20]
+# phone_numbers = ["08013456789", "08021456789", "080312456789", "080412356789"]
+# rating = [1.98, 3.67, 2.54, 5.34]
+# wallet = [12000, 11456, 10387, 15345]
+# pay_per_delivery = 1500
+# hours = [8, 0, 7, 0]
+
+# # Define calculation function
+# calculate_earnings = lambda deliv, pay, bonus, fuel: (deliv * pay) + bonus + fuel
+
+# # Include 'hours' in zip() so each driver's status is calculated during their report generation
+# for driver, delivery, phone, rat, wall, hour in zip(drivers, deliveries, phone_numbers, rating, wallet, hours):
+    
+#     # Determine online/offline status as a string
+#     if hour > 0:
+#         status = "Online"
+#     else:
+#         status = "Offline"
+
+#     # Calculate bonuses
+#     if delivery >= 30:
+#         bonus = 5000
+#         fuel_allowance = 1000
+#     elif delivery >= 20: 
+#         bonus = 5000
+#         fuel_allowance = 0  
+#     else:
+#         bonus = 0
+#         fuel_allowance = 0
+
+#     total_earnings = calculate_earnings(delivery, pay_per_delivery, bonus, fuel_allowance)
+
+#     report = f"""
+# Driver Earning System
+# ---------------------
+# Driver Name : {driver}
+# Number Of Deliveries : {delivery}
+# Phone Number : {phone}
+# Rating : {rat}
+# Wallet : ₦{wall:,}
+# Status : {status}
+# Pay Per Delivery : ₦{pay_per_delivery:,}
+# Bonus : ₦{bonus:,}
+# Fuel Allowance : ₦{fuel_allowance:,}
+# Total Earnings : ₦{total_earnings:,}
+# """
+#     print(report)
+
+# drivers = [
+#  {
+#     "name": "Tega",
+#     "phone": "08013456789",
+#     "deliveries": 25,
+#     "rating": 4.8,
+#     "wallet": 12000,
+#     "hours": 8
+# },
+#  {
+#     "name": "John",
+#     "phone": "08013456789",
+#     "deliveries": 27,
+#     "rating": 4.9,
+#     "wallet": 14000,
+#     "hours": 9
+# },
+#  {
+#     "name": "Sunny",
+#     "phone": "08013456789",
+#     "deliveries": 19,
+#     "rating": 4.3,
+#     "wallet": 10000,
+#     "hours": 6
+# },
+#  {
+#     "name": "Gift",
+#     "phone": "08013256789",
+#     "deliveries": 30,
+#     "rating": 4.9,
+#     "wallet": 15000,
+#     "hours": 10
+# },
+#  {
+#     "name": "Mary",
+#     "phone": "08013452789",
+#     "deliveries": 15,
+#     "rating": 4.1,
+#     "wallet": 9000,
+#     "hours": 6
+# }
+# ]
+
+# pay_per_delivery = 1500  
+# calc_earnings = lambda deliveries, pay, bonus, fuel : (deliveries * pay) + bonus + fuel
+
+# for driver in drivers:
+#     name = driver["name"]
+#     phone = driver["phone"]
+#     deliveries = driver["deliveries"]
+#     rating = driver["rating"]
+
+#     if deliveries >= 30:
+#         bonus = 5000
+#         fuel_allowance = 1000
+#     elif deliveries >= 20: 
+#         bonus = 5000
+#         fuel_allowance = 0  
+#     else:
+#         bonus = 0
+#         fuel_allowance = 0
+
+#         driver["bonus"] = bonus
+#         driver["fuel_allowance"] = fuel_allowance
+
+
+
+# total_earnings = calc_earnings(
+# deliveries, pay_per_delivery, bonus, fuel_allowance)
+# driver["total_earnings"] = total_earning
+# driver["wallet"] += driver bonus + fuel_allowance
+    
+
+
+#     report = f"""
+# Driver Earning System
+# ---------------------
+# Driver Name : {drivers}
+# Number Of Deliveries : {delivery}
+# Phone Numbers : {phone_numbers}
+# Rating : {rating}
+# Wallet : {wallet}
+# Pay Per Delivery : ₦{pay_per_delivery:,}
+# Bonus : ₦{bonus:,}
+# Fuel Allowance : ₦{fuel_allowance:,}
+# Total Earnings : ₦{total_earnings:,}
+# """
+#     print(report)
+    
+# print("RoutEarner Driver")
+# for driver in drivers:
+#      name = driver["name"]
+#      total_earnings = driver["total_earnings"]
+     
+    
+#      print(f"{name} -  ₦ {total_earnings:,}")
+
+# drivers = [
+#     {
+#         "name": "Tega",
+#         "phone": "08013456789",
+#         "deliveries": 25,
+#         "rating": 4.8,
+#         "wallet": 12000,
+#         "hours": 8,
+#     },
+#     {
+#         "name": "John",
+#         "phone": "08013456789",
+#         "deliveries": 27,
+#         "rating": 4.9,
+#         "wallet": 14000,
+#         "hours": 9,
+#     },
+#     {
+#         "name": "Sunny",
+#         "phone": "08013456789",
+#         "deliveries": 19,
+#         "rating": 4.3,
+#         "wallet": 10000,
+#         "hours": 6,
+#     },
+#     {
+#         "name": "Gift",
+#         "phone": "08013256789",
+#         "deliveries": 30,
+#         "rating": 4.9,
+#         "wallet": 15000,
+#         "hours": 10,
+#     },
+#     {
+#         "name": "Mary",
+#         "phone": "08013452789",
+#         "deliveries": 15,
+#         "rating": 4.1,
+#         "wallet": 9000,
+#         "hours": 6,
+#     },
+# ]
+
+# pay_per_delivery = 1500
+# calc_earnings = (
+#     lambda deliveries, pay, bonus, fuel: (deliveries * pay) + bonus + fuel
+# )
+
+# for driver in drivers:
+#     name = driver["name"]
+#     phone = driver["phone"]
+#     deliveries = driver["deliveries"]
+#     rating = driver["rating"]
+
+#     # Calculate bonuses
+#     if deliveries >= 30:
+#         bonus = 5000
+#         fuel_allowance = 1000
+#     elif deliveries >= 20:
+#         bonus = 5000
+#         fuel_allowance = 0
+#     else:
+#         bonus = 0
+#         fuel_allowance = 0
+
+#     # Store calculated values in dictionary (out of the else block)
+#     driver["bonus"] = bonus
+#     driver["fuel_allowance"] = fuel_allowance
+
+#     # Compute total earnings and update wallet
+#     total_earnings = calc_earnings(
+#         deliveries, pay_per_delivery, bonus, fuel_allowance
+#     )
+#     driver["total_earnings"] = total_earnings
+#     driver["wallet"] += bonus + fuel_allowance
+
+#     report = f"""
+# Driver Earning System
+# ---------------------
+# Driver Name : {name}
+# Number Of Deliveries : {deliveries}
+# Phone Number : {phone}
+# Rating : {rating}
+# Updated Wallet : ₦{driver["wallet"]:,}
+# Pay Per Delivery : ₦{pay_per_delivery:,}
+# Bonus : ₦{bonus:,}
+# Fuel Allowance : ₦{fuel_allowance:,}
+# Total Earnings : ₦{total_earnings:,}
+# """
+#     print(report)
+
+# drivers = [
+#     {
+#         "name": "Tega",
+#         "phone": "08013456789",
+#         "deliveries": 25,
+#         "rating": 4.8,
+#         "wallet": 12000,
+#         "hours": 8,
+#     },
+#     {
+#         "name": "John",
+#         "phone": "08013456789",
+#         "deliveries": 27,
+#         "rating": 4.9,
+#         "wallet": 14000,
+#         "hours": 9,
+#     },
+#     {
+#         "name": "Sunny",
+#         "phone": "08013456789",
+#         "deliveries": 19,
+#         "rating": 4.3,
+#         "wallet": 10000,
+#         "hours": 6,
+#     },
+#     {
+#         "name": "Gift",
+#         "phone": "08013256789",
+#         "deliveries": 30,
+#         "rating": 4.9,
+#         "wallet": 15000,
+#         "hours": 10,
+#     },
+#     {
+#         "name": "Mary",
+#         "phone": "08013452789",
+#         "deliveries": 15,
+#         "rating": 4.1,
+#         "wallet": 9000,
+#         "hours": 6,
+#     },
+# ]
+
+# pay_per_delivery = 1500
+# calc_earnings = (
+#     lambda deliveries, pay, bonus, fuel: (deliveries * pay) + bonus + fuel
+# )
+
+# for driver in drivers:
+#     name = driver["name"]
+#     phone = driver["phone"]
+#     deliveries = driver["deliveries"]
+#     rating = driver["rating"]
+
+#     # Calculate bonuses
+#     if deliveries >= 30:
+#         bonus = 5000
+#         fuel_allowance = 1000
+#     elif deliveries >= 20:
+#         bonus = 5000
+#         fuel_allowance = 0
+#     else:
+#         bonus = 0
+#         fuel_allowance = 0
+
+#     # Store calculated values in dictionary (out of the else block)
+#     driver["bonus"] = bonus
+#     driver["fuel_allowance"] = fuel_allowance
+
+    
+#     delivery_earnings = pay_per_delivery * deliveries
+#     driver[delivery_earnings] = delivery_earnings
+
+#     total_earnings = calc_earnings(
+#         deliveries, pay_per_delivery, bonus, fuel_allowance
+#     )
+    
+#     driver["total_earnings"] = total_earnings
+#     driver["wallet"] += bonus + fuel_allowance
+
+#     report = f"""
+# Driver Earning System
+# ---------------------
+# Driver : {name}
+# Deliveries : {deliveries}
+# Delivery Earnings : {delivery_earnings}
+# Updated Wallet : ₦{driver["wallet"]:,}
+# Bonus : ₦{bonus:,}
+# Fuel Allowance : ₦{fuel_allowance:,}
+# Total Earnings : ₦{total_earnings:,}
+# """
+#     print(report)
+
+
+# drivers = [
+#     {
+#         "name": "Tega",
+#         "phone": "08013456789",
+#         "deliveries": 25,
+#         "rating": 4.8,
+#         "wallet": 12000,
+#         "hours": 8,
+#     },
+#     {
+#         "name": "John",
+#         "phone": "08013456789",
+#         "deliveries": 27,
+#         "rating": 4.9,
+#         "wallet": 14000,
+#         "hours": 9,
+#     },
+#     {
+#         "name": "Sunny",
+#         "phone": "08013456789",
+#         "deliveries": 19,
+#         "rating": 4.3,
+#         "wallet": 10000,
+#         "hours": 6,
+#     },
+#     {
+#         "name": "Gift",
+#         "phone": "08013256789",
+#         "deliveries": 30,
+#         "rating": 4.9,
+#         "wallet": 15000,
+#         "hours": 10,
+#     },
+#     {
+#         "name": "Mary",
+#         "phone": "08013452789",
+#         "deliveries": 15,
+#         "rating": 4.1,
+#         "wallet": 9000,
+#         "hours": 6,
+#     },
+# ]
+
+# pay_per_delivery = 1500
+# calc_earnings = (
+#     lambda deliveries, pay, bonus, fuel: (deliveries * pay) + bonus + fuel
+# )
+
+# for driver in drivers:
+#     name = driver["name"]
+#     phone = driver["phone"]
+#     deliveries = driver["deliveries"]
+#     rating = driver["rating"]
+
+#     # Calculate bonuses
+#     if deliveries >= 30:
+#         bonus = 5000
+#         fuel_allowance = 1000
+#     elif deliveries >= 20:
+#         bonus = 5000
+#         fuel_allowance = 0
+#     else:
+#         bonus = 0
+#         fuel_allowance = 0
+
+#     # Store calculated values in dictionary
+#     driver["bonus"] = bonus
+#     driver["fuel_allowance"] = fuel_allowance
+
+#     # Compute base delivery earnings and total earnings
+#     delivery_earnings = pay_per_delivery * deliveries
+#     driver["delivery_earnings"] = delivery_earnings
+
+#     total_earnings = calc_earnings(
+#         deliveries, pay_per_delivery, bonus, fuel_allowance
+#     )
+#     driver["total_earnings"] = total_earnings
+#     driver["wallet"] += bonus + fuel_allowance
+
+#     report = f"""
+# Driver Earning System
+# ---------------------
+# Driver : {name}
+# Deliveries : {deliveries}
+# Deliveries Earnings : ₦{delivery_earnings:,}
+# Updated Wallet : ₦{driver["wallet"]:,}
+# Bonus : ₦{bonus:,}
+# Fuel Allowance : ₦{fuel_allowance:,}
+# Total Earnings : ₦{total_earnings:,}
+# """
+#     print(report)
+
+
+# drivers = [
+#     {
+#         "name": "Tega",
+#         "phone": "08013456789",
+#         "deliveries": 25,
+#         "rating": 4.8,
+#         "wallet": 12000,
+#         "hours": 8,
+#     },
+#     {
+#         "name": "John",
+#         "phone": "08013456789",
+#         "deliveries": 27,
+#         "rating": 4.9,
+#         "wallet": 14000,
+#         "hours": 9,
+#     },
+#     {
+#         "name": "Sunny",
+#         "phone": "08013456789",
+#         "deliveries": 19,
+#         "rating": 4.3,
+#         "wallet": 10000,
+#         "hours": 6,
+#     },
+#     {
+#         "name": "Gift",
+#         "phone": "08013256789",
+#         "deliveries": 30,
+#         "rating": 4.9,
+#         "wallet": 15000,
+#         "hours": 10,
+#     },
+#     {
+#         "name": "Mary",
+#         "phone": "08013452789",
+#         "deliveries": 15,
+#         "rating": 4.1,
+#         "wallet": 9000,
+#         "hours": 6,
+#     },
+# ]
+# drivers = [
+#     {"name": "Tega", "deliveries": 25},
+#     {"name": "John", "deliveries": 27},
+#     {"name": "Gift", "deliveries": 30},
+#     {"name": "Sunny", "deliveries":19},
+#     {"name": "Mary", "deliveries": 15},
+
+# ]
+# pay_per_delivery = 1500
+
+# def calculate_delivery_earnings(deliveries, pay):
+#     return deliveries * pay
+
+# def calculate_bonus(deliveries):
+#     if deliveries >= 20:
+#         bonus = 5000
+#     else:
+#         bonus = 0
+#     return bonus
+
+# def calculate_fuel(deliveries):
+#     if deliveries >= 30:
+#         return 1000
+#     else:
+#         return 0
+
+# def calculate_total_earnings(delivery_earnings, bonus, fuel):
+#     return delivery_earnings + bonus + fuel
+
+# for driver in drivers:
+#     name = driver["name"]
+#     deliveries = driver["deliveries"]
+#     delivery_earnings = calculate_delivery_earnings(deliveries, pay_per_delivery)
+#     bonus = calculate_bonus(deliveries)
+#     fuel = calculate_fuel(deliveries)
+#     total_earnings = calculate_total_earnings(
+#     delivery_earnings,
+#     bonus,
+#     fuel
+# )
+
+
+#     print(f"Driver Name : {name}")
+#     print(f"Deliveries : {deliveries}")
+#     print(f"Delivery Earnings : ₦{delivery_earnings}")
+#     print(f"Bonus : ₦{bonus}")
+#     print(f"Fuel Allowance : ₦{fuel}")
+#     print(f'Total Earnings : ₦{total_earnings}')
+#     print("_" * 30)
+
+# def calculate_bonus(deliveries):
+#     if deliveries >= 20:
+#         return 5000
+#     else:
+#         return 0
+    
+# def normal_bonus(deliveries):
+#     if deliveries >= 20:
+#         return 5000
+#     return 0
+
+# def promotional_bonus(deliveries):
+#     if deliveries >= 15:
+#         return 8000
+#     return 0
+
+# bonus = calculate_bonus(35)
+# promotion = promotional_bonus(35)
+# print(bonus)
+# print(promotion)
+
+
+# def double_number(number):
+#     result = number * 2
+#     return result
+# print(double_number(7))
+
+# class Driver:
+#     def __init__(self, name, deliveries):
+#         self.name = name
+#         self.deliveries = deliveries
+
+#     def calculate_earnings(self):
+#         return self.deliveries * 1500
+
+# driver1 = Driver("Tega", 25)
+# driver2 = Driver("John", 30)
+# driver3 = Driver("Mary", 18)
+
+# # driver1 = Driver("Tega", 25)
+
+# print(driver3.calculate_earnings())
+
+# class Driver:
+#     def __init__(self, name, phone, deliveries, wallet):
+#         self.name = name
+#         self.phone = phone
+#         self.deliveries = deliveries
+#         self.wallet = wallet
+
+#     def calculate_earnings(self):
+#         return self.deliveries * 1500
+
+
+
+#     def display_info(self):
+#         print(f"Driver: {self.name}")
+#         print(f"Phone: {self.phone}")
+#         print(f"Deliveries: {self.deliveries}")
+#         print(f"Wallet: ₦{self.wallet}")
+
+# driver1 = Driver(
+#     "Tega",
+#     "08013456789",
+#     25,
+#     12000
+# )
+# driver1.display_info()
+
+# class Driver:
+
+#     def __init__(self, name, deliveries, wallet):
+#         self.name = name
+#         self.deliveries = deliveries
+#         self.wallet = wallet
+
+#     def add_delivery(self):
+#         self.deliveries += 1
+
+#     def earn_from_delivery(self):
+#         self.wallet += 1500
+        
+
+#     def show_deliveries(self):
+#         print(f"{self.delivery} Deliveries.")
+#         print(f"{self.wallet} Wallet.")
+
+# driver1 = Driver("Tega", 25, 12000)
+
+# driver1.add_delivery()
+# driver1.earn_from_delivery()
+
+# class Driver:
+
+#     def __init__(self, name, deliveries, wallet):
+#         self.name = name
+#         self.deliveries = deliveries
+#         self.wallet = wallet
+
+#     def add_delivery(self):
+#         self.deliveries += 1
+
+#     def earn_from_delivery(self):
+#         self.wallet += 1500  
+
+#     def show_summary(self):
+        
+#         print(f"{self.deliveries} deliveries.")
+#         print(f"₦{self.wallet:,} Wallet")
+
+
+
+# driver1 = Driver("Tega", 25, 12000)
+
+# driver1.add_delivery()
+# driver1.earn_from_delivery()
+# driver1.show_summary()
+
+# class Driver:
+
+#     def __init__(self, name, deliveries = 0, wallet = 0, bonus = 0, fuel = 0):
+#         self.name = name
+#         self.deliveries = deliveries
+#         self.wallet = wallet
+#         self.bonus = bonus
+#         self.fuel = fuel
+
+#     def calculate_bonus(self):
+#         if self.deliveries >= 30:
+#             self.bonus = 5000
+#             self.fuel = 1000
+
+#         elif self.deliveries >= 20:
+#            self. bonus = 5000
+#            self.fuel = 0
+
+#         else:
+#             self.bonus = 0
+#             self.fuel = 0
+
+#     def complete_delivery(self):
+#         self.deliveries += 1
+#         self.wallet += 1500
+#         self.calculate_bonus()
+
+#     def show_summary(self):
+#         print(f"Driver Name :{self.name}")
+#         print(f"{self.deliveries} deliveries.")
+#         print(f"₦{self.wallet:,} Wallet")
+#         print(f"₦{self.bonus:,} Bonus")
+#         print(f"₦{self.fuel:,} Fuel")
+        
+        
+# driver1 = Driver("Tega", 25, 12000)
+
+# driver1.complete_delivery()
+# driver1.show_summary()
+
+# class Driver:
+
+#     def __init__(self, name, deliveries=0, wallet=0, bonus=0, fuel=0):
+#         self.name = name
+#         self.deliveries = deliveries
+#         self.wallet = wallet
+#         self.bonus = bonus
+#         self.fuel = fuel  # Store fuel in self
+
+#     def calculate_bonus(self):
+#         # Use lowercase if/elif/else and reference self.deliveries
+#         if self.deliveries >= 30:
+#             self.bonus = 5000
+#             self.fuel = 1000
+#         elif self.deliveries >= 20:
+#             self.bonus = 5000
+#             self.fuel = 0
+#         else:
+#             self.bonus = 0
+#             self.fuel = 0
+
+#     def complete_delivery(self):
+#         self.deliveries += 1
+#         self.wallet += 1500
+#         # Recalculate bonus automatically whenever a delivery is completed
+#         self.calculate_bonus()
+
+#     def show_summary(self):
+#         print(f"Driver Name    : {self.name}")
+#         print(f"Deliveries     : {self.deliveries}")
+#         print(f"Wallet Balance : ₦{self.wallet:,}")
+#         print(f"Bonus          : ₦{self.bonus:,}")
+#         print(f"Fuel Allowance : ₦{self.fuel:,}")
+
+
+# # Pass starting values (defaulting bonus and fuel to 0)
+# driver1 = Driver("Tega", 25, 12000)
+
+# # Complete a delivery and view the updated summary
+# driver1.complete_delivery()
+# driver1.show_summary()
+
+
+1.
+# class Driver:
+
+#     def __init__(self, name, deliveries):
+#         self.name = name
+#         self.deliveries = deliveries
+
+#     def add_delivery(self):
+#         self.deliveries += 1
+
+#     def show_info(self):
+#         print(f"Driver: {self.name}")
+#         print(f"Deliveries: {self.deliveries}")
+
+# driver1 = Driver("Tega", 10,)
+# driver2 = Driver("John", 20,)
+# driver3 = Driver("Mary", 15,)
+
+# driver1.add_delivery()
+# driver1.show_info()
+# driver2.add_delivery()
+# driver2.show_info()
+# driver3.add_delivery()
+# driver3.show_info()
+
+# 2.
+# class Driver:
+
+#     pay_per_delivery = 1500
+
+#     def __init__(self, name, deliveries = 0, wallet = 0):
+#         self.name = name
+#         self.deliveries = deliveries
+#         self.wallet = wallet
+
+#     def calculate_earnings(self):
+#         return self.deliveries * Driver.pay_per_delivery
+
+#     def add_delivery(self):
+#         self.deliveries += 1
+#         self.wallet += Driver.pay_per_delivery
+
+    
+
+#     def show_earnings(self):
+#         earnings = self.calculate_earnings()
+
+#     def show_info(self):
+#         print(f"Driver: {self.name}")
+#         print(f"Deliveries: {self.deliveries}")
+#         print(f"Wallet: {self.wallet}")
+#         print(f"{self.name} earned ₦{earnings:,}")
+#         print("_" * 30)
+
+# driver1 = Driver("Tega", 10, 5000)
+# driver2 = Driver("John", 15, 7000)
+# driver3 = Driver("Mary", 12, 9000)
+
+
+# driver1.add_delivery()
+# driver1.show_info()
+# driver1.add_delivery()
+
+# driver2.add_delivery()
+# driver2.show_info()
+# driver3.add_delivery()
+# driver3.add_delivery()
+# driver3.add_delivery()
+# driver3.show_info()
+
+# class Person:
+
+#     def __init__(self, name, phone):
+#         self.name = name
+#         self.phone = phone
+
+#     def describe(self):
+#         print(f"Name: {self.name}, Phone: {self.phone}")
+
+# class Customer(Person):
+#     pass
+
+# driver1 = Person("Tega", "08022400209")
+# customer1 = Customer("Alice", "08012345678")
+
+# driver1.describe()
+# customer1.describe()
+
+# class Driver:
+
+#     pay_per_delivery = 1500
+
+#     def __init__(self, name, deliveries = 0):
+#         self.name = name
+#         self.deliveries = deliveries
+#         self.bonus = 0
+        
+#     def calculate_bonus(self):
+#         if self.deliveries >= 30:
+#             self.bonus = 5000
+            
+#         elif self.deliveries >= 20:
+#             self.bonus = 5000
+            
+#         else:
+#             self.bonus = 0
+#             return self.bonus
+
+        
+#     def calculate_earnings(self):
+#         return self.deliveries * Driver.pay_per_delivery
+
+
+
+# driver1 = Driver("Tega", 25)
+
+# earnings = driver1.calculate_earnings()
+# bonus = driver1.calculate_bonus()
+
+
+# print(f"{driver1.name} earned ₦{earnings:,}")
+# print(f"{driver1.name} bonus: ₦{bonus:,}")
+
+
+#     def add_delivery(self):
+#         self.deliveries += 1
+#         self.wallet += Driver.pay_per_delivery
+
+    
+
+#     def show_earnings(self):
+#         earnings = self.calculate_earnings()
+
+#     def show_info(self):
+#         print(f"Driver: {self.name}")
+#         print(f"Deliveries: {self.deliveries}")
+#         print(f"Wallet: {self.wallet}")
+#         print(f"{self.name} earned ₦{earnings:,}")
+#         print("_" * 30)
+
+# driver1 = Driver("Tega", 10, 5000)
+# driver2 = Driver("John", 15, 7000)
+# driver3 = Driver("Mary", 12, 9000)
+
+
+# driver1.add_delivery()
+# driver1.show_info()
+# driver1.add_delivery()
+
+# driver2.add_delivery()
+# driver2.show_info()
+# driver3.add_delivery()
+# driver3.add_delivery()
+# driver3.add_delivery()
+# driver3.show_info()
+
+
+# class Driver:
+
+#     pay_per_delivery = 1500
+
+#     def __init__(self, name, deliveries=0, bonus=0, fuel=0):
+#         self.name = name
+#         self.deliveries = deliveries
+#         self.bonus = bonus
+#         self.fuel = fuel
+        
+
+#     def calculate_bonus(self):
+#         if self.deliveries >= 30:
+#             self.bonus = 5000
+#             self.fuel = 1000
+#         elif self.deliveries >= 20:
+#              self.bonus = 5000
+#              self.fuel = 0
+#         else:
+#             self.bonus = 0
+#             self.fuel = 0
+#         return self.bonus 
+
+# driver1 = Driver("Tega", 31)
+
+# earnings = driver1.calculate_earnings()
+        
+
+
+# bonus = driver1.calculate_bonus()
+
+# print(f"{driver1.name} earned ₦{earnings:,}")
+# print(f"{driver1.name} bonus: ₦{driver1.bonus:,}")
+# print(f"{driver1.name} fuel: ₦{driver1.fuel:,}")
+
+# class Driver:
+
+#     pay_per_delivery = 1500
+
+#     def __init__(self, name, deliveries=0, bonus=0, fuel=0):
+#         self.name = name
+#         self.deliveries = deliveries
+#         self.bonus = bonus
+#         self.fuel = fuel
+
+#     def calculate_bonus(self):
+#         if self.deliveries >= 20:
+#             return 5000
+#         else:
+#             return 0
+            
+
+#     def calculate_fuel(self):
+#             if self.deliveries >= 30:
+#                 return 1000
+#             else:
+#                 return 0
+        
+#     def calculate_earnings(self):
+#         return self.deliveries * Driver.pay_per_delivery
+    
+#     def complete_delivery(self):
+#         self.deliveries += 1
+
+#     def show_earnings(self):
+#         self.bonus = self.calculate_bonus()
+#         self.fuel = self.calculate_fuel()
+#         earnings = self.calculate_earnings() + self.bonus + self.fuel
+
+#         print(f"Driver: {self.name}")
+#         print(f"Base Pay: ₦{earnings:,}")
+#         print(f"Bonus: ₦{self.bonus:,}")
+#         print(f"Fuel: ₦{self.fuel:,}")
+
+
+# driver1 = Driver("Tega", 19)
+
+# driver1.complete_delivery()
+# driver1.complete_delivery()
+
+# driver1.show_earnings()
+        
+
+#         print(f"Driver: {self.name}")
+#         print(f"Base Pay: ₦{self.deliveries * Driver.pay_per_delivery:,}")
+#         print(f"Bonus: ₦{self.bonus:,}")
+#         print(f"Fuel: ₦{self.fuel:,}")
+#         print(f"Total Pay: ₦{earnings:,}")
+
+# driver1 = Driver("Tega", 31)
+# driver1.show_earnings()
+
+
+# # print(f"{driver1.name} earned ₦{earnings:,}")
+# # print(f"{driver1.name} bonus: ₦{driver1.bonus:,}")
+# # print(f"{driver1.name} fuel: ₦{driver1.fuel:,}")
+
+# class Driver:
+
+#     pay_per_delivery = 1500
+
+#     def __init__(self, name, deliveries=0,wallet = 0):
+#         self.name = name
+#         self.deliveries = deliveries
+#         self.wallet = wallet
+#         self.bonus = 0
+#         self.fuel = 0
+#         self.credited_bonus = 0
+#         self.credited_fuel = 0
+
+#     def calculate_bonus(self):
+#         if self.deliveries >= 20:
+#             return 5000
+#         else:
+#             return 0
+            
+
+#     def calculate_fuel(self):
+#             if self.deliveries >= 30:
+#                 return 1000
+#             else:
+#                 return 0
+        
+#     def calculate_earnings(self):
+#         return self.deliveries * Driver.pay_per_delivery
+
+#     def complete_delivery(self):
+#         self.deliveries += 1
+
+#     def update_wallet(self):
+#         self.bonus = self.calculate_bonus()
+#         self.fuel = self.calculate_fuel()
+
+#         new_bonus = self.bonus - self.credited_bonus
+#         new_fuel = self.fuel - self.credited_fuel
+
+#         self.wallet += new_bonus + new_fuel
+
+#         self.credited_bonus = self.bonus
+#         self.credited_fuel = self.fuel
+
+
+
+#     def show_earnings(self):
+#         # self.update_wallet()
+#         self.bonus = self.calculate_bonus()
+#         self.fuel = self.calculate_fuel()
+#         earnings = self.calculate_earnings() + self.bonus + self.fuel
+#         # total_pay = earnings 
+
+#         print(f"Driver: {self.name}")
+#         print(f"Base Pay: ₦{self.deliveries * Driver.pay_per_delivery:,}")
+#         print(f"Wallet: ₦{self.wallet:,}")
+#         print(f"Bonus: ₦{self.bonus:,}")
+#         print(f"Fuel: ₦{self.fuel:,}")
+#         print(f"Total Pay: ₦{earnings:,}")
+#         print(f"_" * 30)
+
+# driver1 = Driver("Tega", 29, 10000)
+# driver2 = Driver("John", 29, 15000)
+
+# driver1.complete_delivery()
+# driver2.complete_delivery()
+# driver1.complete_delivery()
+# driver2.complete_delivery()
+
+
+# driver1.update_wallet()
+# driver2.update_wallet()
+
+# # driver1.show_earnings()
+# # driver2.show_earnings()
+
+# print(driver1.wallet)
+# print(driver2.wallet)
+
+
+# # self.bonus = self.calculate_bonus()
+# # self.fuel = self.calculate_fuel()
+
+
+# def analyze_sales(prices):
+#     # Initialize trackers using the first item in the list
+#     total_sales = 0
+#     highest_sale = prices[0]
+#     lowest_sale = prices[0]
+    
+#     # Calculate values manually using a single for loop
+#     for price in prices:
+#         total_sales += price
+        
+#         if price > highest_sale:
+#             highest_sale = price
+            
+#         if price < lowest_sale:
+#             lowest_sale = price
+            
+#     # Calculate the average and round to 2 decimal places
+#     average_sale = round(total_sales / len(prices), 2)
+    
+#     # Build and return the required dictionary summary
+#     return {
+#         "total": total_sales,
+#         "average": average_sale,
+#         "highest": highest_sale,
+#         "lowest": lowest_sale
+#     }
+
+
+# if  10:
+#     print("truthy")
+# else:
+#     print('falsey')
+
+
+# class RouteEarner:
+#     def __init__(self):
+#         self.drivers = []
+
+#     def add_driver(self, driver):
+#         self.drivers.append(driver)
+
+# driver1 = Driver("Tega", 19, 10000)
+# driver2 = Driver("John", 29, 15000)
+# driver3 = Driver("Mary", 15, 8000)
+
+# routeearner = RouteEarner()
+
+# routeearner.add_driver(driver1)
+# routeearner.add_driver(driver2)
+# routeearner.add_driver(driver3)
+
+# print(len(routeearner.drivers))
+
+class RouteEarner:
+
+    def __init__(self):
+        self.drivers = []
+
+    def add_driver(self, driver):
+        self.drivers.append(driver)
+
+    def show_all_drivers(self):
+        for driver in self.drivers:
+            driver.show_earnings()
+
+
+driver1 = Driver("Tega", 19, 10000)
+driver2 = Driver("John", 29, 15000)
+driver3 = Driver("Mary", 15, 8000)
+
+
+
+routeearner = RouteEarner()
+
+routeearner.add_driver(driver1)
+routeearner.add_driver(driver2)
+routeearner.add_driver(driver3)
+
+routeearner.show_all_drivers()
+
+# print(len(routeearner.drivers))

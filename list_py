@@ -1,0 +1,25 @@
+#def mutiply(number):
+ #   return(number * 10)
+#result = mutiply(7)
+#print(result)
+
+def unit_converter():
+    try:
+        value = float(input("Enter the value: "))
+        unit = input("Enter the unit (km or mi): ").lower()
+
+        if unit == "km":
+            result = value * 0.621371
+            print(f"{value} km = {round(result, 2)} mi")
+
+        elif unit == "mi":
+            result = value / 0.621371
+            print(f"{value} mi = {round(result, 2)} km")
+
+        else:
+            print("Invalid unit. Please enter 'km' or 'mi'.")
+
+    except ValueError:
+        print("Invalid number. Please enter a numeric value.")
+
+unit_converter()

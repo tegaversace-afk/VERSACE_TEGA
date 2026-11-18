@@ -1,0 +1,132 @@
+# x = 1
+# total = 0
+
+# while x <= 5:
+#     total += x
+#     x += 1
+
+# balance = 1000
+# print(balance)
+# print("Hello")
+# print("Job complete")
+
+# x = [1, 2, 3]
+# y = [1, 2, 3]
+# print(id(x))
+# print(iaswe
+
+# CORRECT_USERNAME = "admin"
+# CORRECT_PASSWORD = "1234"
+
+# attempts = 0
+# while attempts < 4:
+#     username = input("enter username ")
+#     if username == CORRECT_USERNAME:
+#         break
+#     attempts += 1
+#     print("Incorrect username. Try again. Attempts remaining:", 4 - attempts)
+# else:
+#     print("account locked")
+#     exit()
+
+# attempts = 0
+# while attempts < 4:
+#     password = input("enter password")
+#     if password == CORRECT_PASSWORD:
+#         print('login succesfull')
+#         break
+#     attempts += 1
+#     print("Incorrect password. Try again. Attempts remaining:", 4 - attempts)
+# else:
+#     print('account locked')
+
+
+
+
+# MAX_ATTEMPTS = 4
+
+# # Username verification phase
+# username_attempts = 0
+# username_correct = False
+
+# while username_attempts < MAX_ATTEMPTS:
+#     user_input = input("Enter username: ")
+#     username_attempts += 1
+
+#     if user_input == CORRECT_USERNAME:
+#         username_correct = True
+#         break
+#     else:
+#         remaining = MAX_ATTEMPTS - username_attempts
+#         if remaining > 0:
+#             print(f"Incorrect username. Try again. ({remaining} attempt(s) remaining)\n")
+
+# # Password verification phase (only runs if username was correct)
+# if username_correct:
+#     password_attempts = 0
+#     password_correct = False
+
+#     while password_attempts < MAX_ATTEMPTS:
+#         pass_input = input("Enter password: ")
+#         password_attempts += 1
+
+#         if pass_input == CORRECT_PASSWORD:
+#             password_correct = True
+#             break
+#         else:
+#             remaining = MAX_ATTEMPTS - password_attempts
+#             if remaining > 0:
+#                 print(f"Incorrect password. Try again. ({remaining} attempt(s) remaining)\n")
+
+#     if password_correct:
+#         print("Login successful!")
+#     else:
+#         print("Account locked.")
+# else:
+#         print("Account locked.")
+
+correct_username = "admin"
+correct_password = "1234"
+
+attempts = 0
+while attempts < 4:
+    username = input("Enter username: ")
+    if username == correct_username:
+        break
+    attempts += 1
+    print("Incorrect username. Try again. Attempts remaining:", 4 - attempts)
+else:
+    print("Account locked.")
+    exit()
+
+attempts = 0
+while attempts < 4:
+    password = input("Enter password: ")
+    if password == correct_password:
+        print("Login successful!")
+        break
+    attempts += 1
+    print("Incorrect password. Try again. Attempts remaining:", 4 - attempts)
+else:
+    print("Account locked.")
+
+# # Store the secret number
+# SECRET_NUMBER = 7
+
+# # Initialize variables
+# guess = None
+# attempts = 0
+
+# Keep asking until the correct number is guessed
+# while guess != SECRET_NUMBER:
+#     guess = int(input("Guess the number: "))
+#     attempts += 1  # Track number of attempts
+
+#     if guess > SECRET_NUMBER:
+#         print("Too high!\n")
+#     elif guess < SECRET_NUMBER:
+#         print("Too low!\n")
+#     else:
+#         print(f"Correct! You guessed the number in {attempts} attempts.")
+
+        
