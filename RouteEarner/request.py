@@ -1,9 +1,15 @@
+
 class Request:
 
-    def __init__(self, pickup, destination, fare):
+    def __init__(self, pickup, destination, fare,
+        payment_method="cash", discount_rate=0):
+
         self.pickup = pickup
         self.destination = destination
         self.fare = fare
+
+        self.payment_method = payment_method
+        self.discount_rate = discount_rate
 
         self.status = "Pending"
         self.driver = None
@@ -21,17 +27,25 @@ class Request:
         if self.status != "Assigned":
             print("Request must be assigned before completion.")
             return
-        self.status = "Delivered"
 
-        customer_paid, service_fee, wallet_change = self.driver.process_payment(
-            self.fare,
-            self.payment_method,
-            self.discount_rate
-)
+        try:
+            customer_paid, service_fee, wallet_change = self.driver.process_payment(
+                self.fare,
+                self.payment_method,
+                self.discount_rate
+            )
+
+        except ValueError as error:
+            print(error)
+            return
 
         self.customer_paid = customer_paid
         self.service_fee = service_fee
         self.wallet_change = wallet_change
 
         self.driver.add_delivery()
-        self.driver.go_online()
+
+        self.status = "Delivered"
+
+        if self.driver.online:
+            self.driver.available = True
