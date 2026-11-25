@@ -40,22 +40,125 @@
 
 #     print(f"{driver['name']}'s record saved successfully.")
 
+# import json
+
+
+# def save_driver(driver):
+#   filename = f"{driver['name'].lower()}.json"
+
+#   with open(filename, "w") as file:
+#     json.dump(driver, file, indent=4)
+
+#   print(f"{driver['name']}'s record saved successfully.")
+
+
+# john = {"name": "John", "deliveries": 27, "wallet": 12000}
+
+# mary = {"name": "Mary", "deliveries": 30, "wallet": 16000}
+
+# save_driver(john)
+# save_driver(mary)
+
+# john["wallet"] = 15000
+# save_driver(john)
+# total_wallet = sum(driver["wallet"] for driver in drivers)  
+# print(total_wallet)
+
+
+# import json
+
+# drivers = [
+#     {
+#         "name": "John",
+#         "deliveries": 27,
+#         "wallet": 12000
+#     },
+#     {
+#         "name": "Mary",
+#         "deliveries": 30,
+#         "wallet": 16000
+#     },
+#     {
+#         "name": "Tega",
+#         "deliveries": 20,
+#         "wallet": 15000
+#     }
+# ]
+# with open("drivers.json", "r") as file:
+#     drivers = json.load(file)
+
+# for driver in drivers:
+#     print(f" {driver["name"]}, {driver["wallet"]}")
+
+# import json
+
+# with open("drivers.json", "r") as file:
+#     drivers = json.load(file)
+# def get_high_earning_drivers(driver):
+#     high_earners= []
+#     for driver in drivers:
+#         if driver["wallet"] > 20000:
+#             high_earners.append(driver)
+#     return high_earners
+# top_drivers = get_high_earning_drivers(driver)
+# print(top_drivers)
+
+# import json
+
+# def get_high_earning_drivers():
+
+#     with open("drivers.json", "r") as file:
+#         drivers = json.load(file)
+
+#     high_earners = []
+
+#     for driver in drivers:
+#         if driver["wallet"] > 20000:
+#             high_earners.append(driver)
+
+#     return high_earners
+
+# top_drivers = get_high_earning_drivers()
+# print(top_drivers)
+
+# def save_high_earners(driver):
+#     filename = f"{high_earners.lower()}.json"
+#     with open(filename, "w") as file:
+#         json.dump(top_drivers, file, indent=4)
+
+# def save_high_earners(top_drivers):
+#     filename = "high_earners.json"
+#     with open(filename, "w") as file:
+#         json.dump(top_drivers, file, indent=4)
+# print("high earning drivers saved succesfully")
+
+# save_high_earners(top_drivers)
+
+
 import json
 
+def find_drivers():
 
-def save_driver(driver):
-  filename = f"{driver['name'].lower()}.json"
+    with open("drivers.json", "r") as file:
+        drivers = json.load(file)
 
-  with open(filename, "w") as file:
-    json.dump(driver, file, indent=4)
+    experienced_drivers = []
 
-  print(f"{driver['name']}'s record saved successfully.")
+    for driver in drivers:
+        if driver["deliveries"] >= 30:
+            experienced_drivers.append(driver)
 
+    return experienced_drivers
 
-john = {"name": "John", "deliveries": 27, "wallet": 12000}
+def save_drivers(top_drivers):
 
-mary = {"name": "Mary", "deliveries": 30, "wallet": 16000}
+    filename = "experienced_drivers.json"
 
-save_driver(john)
-save_driver(mary)
+    with open(filename, "w") as file:
+        json.dump(top_drivers, file, indent=4)
 
+    print("Experienced drivers saved successfully.")
+
+top_drivers = find_drivers()
+
+save_drivers(top_drivers)

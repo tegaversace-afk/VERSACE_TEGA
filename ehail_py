@@ -806,7 +806,7 @@
 # driver1.show_summary()
 
 
-1.
+
 # class Driver:
 
 #     def __init__(self, name, deliveries):
